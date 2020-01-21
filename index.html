@@ -183,11 +183,15 @@ Error message and password prompt
 
 <li>$:/state/tab-2065006209</li>
 
+<li>$:/state/tab-714125944</li>
+
 <li>$:/state/tab/moresidebar-1850697562</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/StoryList</li>
+
+<li>$:/temp/HidePluginWarning</li>
 
 <li>$:/temp/info-plugin</li>
 
@@ -411,6 +415,8 @@ Error message and password prompt
 
 <li>Abstract objects</li>
 
+<li>aufessen 吃完</li>
+
 <li>closure in Swift</li>
 
 <li>Discourse analysis</li>
@@ -452,6 +458,8 @@ Error message and password prompt
 <li>Mey, J. L. (2001). Pragmatics: An introduction (2nd ed.).</li>
 
 <li>New Tiddler</li>
+
+<li>New Tiddler 1</li>
 
 <li>nginx</li>
 
@@ -9959,7 +9967,7 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200121020706557" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200121022718970" title="$:/state/sidebar">
+<div created="20200120091512741" modified="20200121024209347" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20200120091246407" modified="20200120091251145" title="$:/state/tab--1963855381">
@@ -9983,14 +9991,20 @@ Error message and password prompt
 <div created="20200110025925155" modified="20200110032238689" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
+<div created="20200121024812892" modified="20200121024819001" title="$:/state/tab-714125944">
+<pre>$:/core/ui/TiddlerInfo/Tools</pre>
+</div>
 <div created="20200113082459399" modified="20200113082509605" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Missing</pre>
 </div>
 <div created="20200110030424748" modified="20200120091518696" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200121023958834" list="$:/ControlPanel GettingStarted" modified="20200121024007112" title="$:/StoryList">
+<div created="20200121023958834" list="Transformer [[aufessen 吃完]] $:/ControlPanel GettingStarted" modified="20200121030746452" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
+<pre>yes</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10809,8 +10823,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200120110202206" title="$:/temp/search">
-<pre>conversational</pre>
+<div created="20200114023551220" modified="20200121024243731" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -11007,6 +11021,9 @@ Als ich nach der Schule zu meinem Motorrad kam, steckte der Schlüssel noch im S
 <div created="20200110130250352" modified="20200110130421890" tags="" title="Abstract objects">
 <pre>* Asher (1993)
 ** see p.57 for typology of abstract objects</pre>
+</div>
+<div created="20200121024123376" modified="20200121024150144" tags="德文" title="aufessen 吃完">
+<pre>Ich habe das schon aufgegessen.</pre>
 </div>
 <div created="20200115093032076" modified="20200115124402901" tags="programming" title="closure in Swift">
 <pre>! Trailing closure syntax
@@ -11316,6 +11333,16 @@ Joseph E. Grimes earned his PhD from Cornell University in 1960, where soon afte
 </div>
 <div created="20200110030254938" modified="20200110030256507" tags="" title="New Tiddler">
 <pre></pre>
+</div>
+<div created="20200121024248422" modified="20200121024507450" tags="" title="New Tiddler 1">
+<pre>sssss
+
+```python
+def a():
+    x = 3
+    x = y.strin(&quot;vv&quot;)
+    return
+```</pre>
 </div>
 <div created="20200117080751872" modified="20200117154046548" tags="" title="nginx">
 <pre>! Nginx可作為中間件
@@ -11732,7 +11759,7 @@ struct Person {
 
 代表人物還有 Logacre。</pre>
 </div>
-<div created="20200121015704764" modified="20200121022717217" tags="" title="Transformer">
+<div created="20200121015704764" modified="20200121055622945" tags="" title="Transformer">
 <pre>* Transformer by 李宏毅: https://www.youtube.com/watch?v=ugWDIIOHtPA
 ** 做序列最先想到的是RNN，但RNN的缺點在於不能平行化
 ** 於是序列其實也可以用CNN，而且可以平行化
@@ -11747,7 +11774,9 @@ struct Person {
 **** attention就是吃兩個向量，告訴你這兩個向量有多匹配（output一個分數）。會有各式各樣的做法可以達成這個目的(e.g. inner product)。 
 **** self-attention 用的是 scaled dot-product attention
 *** 對 a 做 soft-max =&gt; a'
-*** a' * v</pre>
+*** a' * v
+** Positional encoding: 把序列順序的資訊加進每個輸入
+** (37:25) Transformer</pre>
 </div>
 <div created="20200117075112927" modified="20200117142956041" tags="" title="uwsgi">
 <pre>!! 產兩個processes (所以會創立兩個workers)
