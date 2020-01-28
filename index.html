@@ -429,6 +429,8 @@ Error message and password prompt
 
 <li>Discourse structure/relations/parsing</li>
 
+<li>Draft of 'New Tiddler 2'</li>
+
 <li>erkennen 認得出來/看出</li>
 
 <li>General noun</li>
@@ -9982,8 +9984,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200121020706557" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200121024209347" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20200120091512741" modified="20200128120522668" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200120091246407" modified="20200120091251145" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -11107,6 +11109,9 @@ Discourse structure is a type of structure used to “refer to the structure of 
 * Martin, J. R. (2009). Discourse studies. in Halliday, M. A. K. and Webster, J. J. (eds.) Continuum companion to systemic functional linguistics.
 ** 回顧介紹SFL框架下的da研究 </pre>
 </div>
+<div modified="20200128115900177" title="Draft of 'New Tiddler 2'">
+<pre></pre>
+</div>
 <div created="20200120074712245" modified="20200120074915473" tags="" title="erkennen 認得出來/看出">
 <pre>* etw. (an D.) erkennen (透過...)看出...
 ** Woran erkennt man ein echter Freund?
@@ -11817,20 +11822,43 @@ struct Person {
 ** Positional encoding: 把序列順序的資訊加進每個輸入
 ** (37:25) Transformer</pre>
 </div>
-<div created="20200128112159451" modified="20200128112927156" tags="" title="Unicode, UTF-8">
-<pre>Unicode是定義所有符號的萬國碼，而UTF-8則是建立在Unicode的基礎上，用來表徵Unicode的一種方法。
+<div created="20200128112159451" modified="20200128122148989" tags="" title="Unicode, UTF-8">
+<pre>字元編碼(character encoding)的問題：電腦運作在數字上，那麼要如何把語言中的各種符號編碼成電腦看得懂的數字？
+
+Unicode是定義所有符號的萬國碼，而UTF-8則是建立在Unicode的基礎上，用來表徵Unicode的一種方法。
+
+! 歷史淵源
+!! ASCII
+
+! Unicode
+!! 述語釐清: codespace, code point, encoded character
+&lt;&lt;&lt;
+The range of integers used to code the abstract characters is called the ''codespace''. A particular  integer  in  this  set  is  called  a  ''code  point''. When  an  abstract  character  is  mapped  or  assigned to a particular code point in the codespace, it is then referred to as an ''encoded character''.
+
+- 出自[[The Unicode Standard 5.0 – Electronic edition: 2.4 Code points and characters|https://www.unicode.org/versions/Unicode5.0.0/ch02.pdf]]
+&lt;&lt;&lt;
+
+!! code point 
+&lt;&lt;&lt;
+&lt;&lt;&lt;
 
 
 &lt;&lt;&lt;
-Computers handle numbers not simply as abstract mathematical objects, but as combina-tions of fixed-size units like bytes and 32-bit words. A character encoding model must take this fact into account when determining how to associate numbers with the characters.Actual  implementations  in  computer  systems  represent  integers  in  specific  code  units  of  particular size—usually 8-bit (= byte), 16-bit, or 32-bit. ''In the Unicode character encoding model,  precisely  defined  encoding forms specify  how  each  integer  (code  point)  for  a  Unicode character is to be expressed as a sequence of one or more code units. The Unicode Standard  provides  three  distinct  encoding  forms  for  Unicode  characters,  using  8-bit,  16-bit,  and  32-bit  units.  These  are  named  UTF-8,  UTF-16,  and  UTF-32,  respectively.'' “UTF” is a carryover from earlier terminology meaning Unicode (or UCS) Transformation Format. Each of these three encoding forms is an equally legitimate mechanism for repre-senting Unicode characters; each has advantages in different environments.
+Computers handle numbers not simply as abstract mathematical objects, but as combinations of fixed-size units like bytes and 32-bit words. A character encoding model must take this fact into account when determining how to associate numbers with the characters. !!Actual  implementations  in  computer  systems  represent  integers  in  specific  code  units  of  particular size—usually 8-bit (= byte), 16-bit, or 32-bit. ''In the Unicode character encoding model,  precisely  defined  encoding forms specify  how  each  integer  (code  point)  for  a  Unicode character is to be expressed as a sequence of one or more code units. The Unicode Standard  provides  three  distinct  encoding  forms  for  Unicode  characters,  using  8-bit,  16-bit,  and  32-bit  units.  These  are  named  UTF-8,  UTF-16,  and  UTF-32,  respectively.'' “UTF” is a carryover from earlier terminology meaning Unicode (or UCS) Transformation Format. Each of these three encoding forms is an equally legitimate mechanism for repre-senting Unicode characters; each has advantages in different environments.
 
 --https://www.unicode.org/versions/Unicode5.0.0/ch02.pdf#G13708
 &lt;&lt;&lt;
 
+! UTF-8
+&lt;&lt;&lt;
+UTF-8 (8-bit Unicode Transformation Format) is a ''variable width character encoding'' capable of encoding all 1,112,064 valid code points in Unicode using one to four 8-bit bytes. 
+- Wikipedia
+&lt;&lt;&lt;
 
 
 ! References
-* [[UTF-8 and Unicode FAQ for Unix/Linux|https://www.cl.cam.ac.uk/~mgk25/unicode.html]]</pre>
+* [[UTF-8 and Unicode FAQ for Unix/Linux|https://www.cl.cam.ac.uk/~mgk25/unicode.html]]
+* [[The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)|https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/]]</pre>
 </div>
 <div created="20200117075112927" modified="20200117142956041" tags="" title="uwsgi">
 <pre>!! 產兩個processes (所以會創立兩個workers)
