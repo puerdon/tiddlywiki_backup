@@ -447,6 +447,8 @@ Error message and password prompt
 
 <li>git</li>
 
+<li>git checkout</li>
+
 <li>Gleason</li>
 
 <li>Glossmatics</li>
@@ -10002,7 +10004,7 @@ Error message and password prompt
 <div created="20200121022851029" modified="20200121022851029" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/katex">
 <pre>yes</pre>
 </div>
-<div created="20200110131601796" modified="20200121020706557" title="$:/state/showeditpreview">
+<div created="20200110131601796" modified="20200131091958650" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20200120091512741" modified="20200128122150653" title="$:/state/sidebar">
@@ -10038,7 +10040,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200131085030553" list="$:/ControlPanel git GettingStarted" modified="20200131085707691" title="$:/StoryList">
+<div created="20200131085030553" list="[[git checkout]] $:/ControlPanel git GettingStarted" modified="20200131085707691" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11160,7 +11162,7 @@ Discourse structure is a type of structure used to “refer to the structure of 
 
 </pre>
 </div>
-<div created="20200131075254684" modified="20200131085223450" tags="" title="git">
+<div created="20200131075254684" modified="20200131085741489" tags="" title="git">
 <pre>真正重要的是 commit 。剩下的 tag 和 branch 都只是貼在個某個 commit 上的一個標籤而已。
 
 ! 三大區塊
@@ -11183,6 +11185,41 @@ Discourse structure is a type of structure used to “refer to the structure of 
 ! References
 * [[Learn Git Branching|https://learngitbranching.js.org/]]
 * [[Visual cheatsheet|https://ndpsoftware.com/git-cheatsheet.html]]</pre>
+</div>
+<div created="20200131085744501" modified="20200131092726852" tags="git" title="git checkout">
+<pre>! 將 `HEAD` 移到某個分支
+```bash
+$ git checkout &lt;branch&gt;
+```
+
+! 將 `HEAD` 移到某個 commit
+```bash
+$ git checkout &lt;commit&gt;
+```
+
+! 回復對一個已被git追蹤檔案的編輯
+```bash
+$ git checkout -- &lt;file&gt;
+```
+
+例如原本`a.txt`內容如下：
+
+&lt;&lt;&lt;
+第一行
+&lt;&lt;&lt;
+
+而且`a.txt` 已經提交，現在我再次編輯`a.txt`，加上第二行：
+
+&lt;&lt;&lt;
+第一行
+第二行
+&lt;&lt;&lt;
+
+現在如果下`git status`應該會看到，`Change not staged for commit`，必須要下`git add a.txt`才能把這個新的編輯紀錄到staging area對吧。
+
+但現在我後悔了，我想把剛剛新增的「第二行」刪掉，這時，我除了可以直接用文本編輯器一直按復原之外，我還可以下`git checkout -- a.txt`，直接讓a.txt回復到上一個commit的狀態。
+
+這聽起來沒有很實用，他實用的地方在於，也許你從某個commit候要給網站新增一個功能，改了某一個程式碼，一直改一直改，結果發現完全是改成錯誤的方向，害整個網站都打不開，而且又因為你新增的程式碼交雜地散落在檔案中的不同位置，不太可能用手動的方式一一刪除，害怕不小心刪掉原本正常運作的程式碼。這時候就可以直接呼叫`git checkout -- &lt;被改壞的檔案&gt;`，讓檔案回復到上一個commit的狀態，然後你改壞掉的這件事就好像沒有發生一樣。</pre>
 </div>
 <div created="20200114060725725" modified="20200114060758526" tags="" title="Gleason">
 <pre>Introduction to descriptive linguistics
