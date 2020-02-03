@@ -499,6 +499,8 @@ Error message and password prompt
 
 <li>soft vs. hard link</li>
 
+<li>static vs. final</li>
+
 <li>stream</li>
 
 <li>struct in Swift</li>
@@ -10042,7 +10044,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="Android GettingStarted" title="$:/StoryList">
+<div created="20200203084834507" list="[[static vs. final]] Android GettingStarted" modified="20200203084834507" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11841,6 +11843,35 @@ $ ln source.file softlink.file
 ! References
 * https://www.youtube.com/watch?v=4-vye3QFTFo
 * https://www.ostechnix.com/explaining-soft-link-and-hard-link-in-linux-with-examples/</pre>
+</div>
+<div created="20200203084838226" modified="20200203090157918" tags="Java" title="static vs. final">
+<pre>! static
+* 可以對變數或函數宣告`static`
+* 宣告 `static` 的變數將只會有唯一值
+
+```java
+class Test {
+    static int staticValue = 1;
+}
+
+Test a = new Test();
+Test b = new Test();
+```
+`a.staticValue` 和 `b.staticValue` 實際上會指到同一塊記憶體的位置上。
+
+* static 變數也可以直接透過類別來存取（因為只會為該變數開同一塊記憶體位置），以上面例子來說：`Test.staticValue`
+
+
+! final
+* 相當於設定常數的概念
+* 可以用來宣告一個類別、函數、或者變數。
+** 類別：當宣告在類別上時，該類別就無法被繼承
+** 函數：當一個函數被宣告為`final`時，則繼承他的子類別無法覆寫
+** 變數：當一個變數被宣告為`final`時，意思是他是一個常數，是無法被修改的
+
+
+! 參考資料
+* http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
 <div created="20200128162412598" modified="20200128162458651" tags="" title="stream">
 <pre>A stream is a sequence of data.
