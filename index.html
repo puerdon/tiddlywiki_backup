@@ -435,6 +435,8 @@ Error message and password prompt
 
 <li>Android: URI and URL</li>
 
+<li>AsyncTask</li>
+
 <li>aufessen 吃完</li>
 
 <li>C/C++學習資源</li>
@@ -10058,7 +10060,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="Java筆記 GettingStarted" title="$:/StoryList">
+<div list="AsyncTask Java筆記 GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11138,6 +11140,48 @@ public static URL buildUrl(String locationQuery) {
         return url;
     }
 ```</pre>
+</div>
+<div created="20200204064032853" modified="20200204065000254" tags="Android" title="AsyncTask">
+<pre>```java
+android.os.AsyncTask&lt;Params, Progress, Result&gt; 
+```
+
+
+`AsyncTask` 可以用來處理需要花時間的任務（像是呼叫API），把這個任務放到另一個 Thread，這樣就不會造成UI卡住。
+
+`AsyncTask`是一個 abstract class，需要被繼承才能使用，並且還要實作`doInBackground()`方法才可以使用。
+
+
+! `AsyncTask`'s generic types
+
+The three types used by an asynchronous task are the following:
+
+*Params, the type of the parameters sent to the task upon execution.
+*Progress, the type of the progress units published during the background computation.
+*Result, the type of the result of the background computation.
+
+不是每個異步任務(asynchronous task)都會用到這三個type，沒用到的type可以標為''Void''類型。
+
+! 異步任務執行的四個步驟
+
+* `onPreExecute()`, invoked on the UI thread before the task is executed. This step is normally used to setup the task, for instance by showing a progress bar in the user interface.
+* `doInBackground(Params...)`, invoked on the background thread immediately after `onPreExecute()` finishes executing. This step is used to perform background computation that can take a long time. The parameters of the asynchronous task are passed to this step. The result of the computation must be returned by this step and will be passed back to the last step. This step can also use `publishProgress(Progress...)` to publish one or more units of progress. These values are published on the UI thread, in the `onProgressUpdate(Progress...)` step.
+* `onProgressUpdate(Progress...)`, invoked on the UI thread after a call to publishProgress(Progress...). The timing of the execution is undefined. This method is used to display any form of progress in the user interface while the background computation is still executing. For instance, it can be used to animate a progress bar or show logs in a text field.
+* `onPostExecute(Result)`, invoked on the UI thread after the background computation finishes. The result of the background computation is passed to this step as a parameter.
+
+! 取消任務
+
+A task can be cancelled at any time by invoking `cancel(boolean)`. Invoking this method will cause subsequent calls to `isCancelled()` to return true. After invoking this method, `onCancelled(java.lang.Object)`, instead of `onPostExecute(java.lang.Object)` will be invoked after `doInBackground(java.lang.Object[])` returns. To ensure that a task is cancelled as quickly as possible, you should always check the return value of `isCancelled()` periodically from `doInBackground(java.lang.Object[])`, if possible (inside a loop for instance.)
+
+
+! doInBackground()
+```
+protected abstract Result doInBackground (Params... params)
+```
+
+! 文檔
+https://developer.android.com/reference/android/os/AsyncTask
+</pre>
 </div>
 <div created="20200121024123376" modified="20200121024150144" tags="德文" title="aufessen 吃完">
 <pre>Ich habe das schon aufgegessen.</pre>
