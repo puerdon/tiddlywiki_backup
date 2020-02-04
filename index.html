@@ -477,6 +477,8 @@ Error message and password prompt
 
 <li>iOS app programming</li>
 
+<li>Java筆記</li>
+
 <li>Java學習資源</li>
 
 <li>Joseph E. Grimes</li>
@@ -10056,7 +10058,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200204041444969" list="UML Java學習資源 [[Android: URI and URL]] GettingStarted" modified="20200204041444969" title="$:/StoryList">
+<div list="Java筆記 GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11412,6 +11414,43 @@ https://www.hackingwithswift.com/glossary
 
 ! Documentation
 * [[The Swift programming language|https://docs.swift.org/swift-book/]]</pre>
+</div>
+<div created="20200204052522734" modified="20200204052829165" tags="Java" title="Java筆記">
+<pre>! 数据存储
+
+來源：https://lingcoder.github.io/OnJava8/#/book/03-Objects-Everywhere?id=%e6%95%b0%e6%8d%ae%e5%ad%98%e5%82%a8
+
+那么，程序在运行时是如何存储的呢？尤其是内存是怎么分配的。有5个不同的地方可以存储数据：
+
+#寄存器（Registers）最快的存储区域，位于 CPU 内部 ^2。然而，寄存器的数量十分有限，所以寄存器根据需求进行分配。我们对其没有直接的控制权，也无法在自己的程序里找到寄存器存在的踪迹（另一方面，C/C++ 允许开发者向编译器建议寄存器的分配）。
+
+#  栈内存（Stack）存在于常规内存 RAM（随机访问存储器，Random Access Memory）区域中，可通过栈指针获得处理器的直接支持。栈指针下移分配内存，上移释放内存，这是一种快速有效的内存分配方法，速度仅次于寄存器。创建程序时，Java 系统必须准确地知道栈内保存的所有项的生命周期。这种约束限制了程序的灵活性。因此，虽然在栈内存上存在一些 Java 数据，特别是对象引用，但 Java 对象却是保存在堆内存的。
+
+#    堆内存（Heap）这是一种通用的内存池（也在 RAM 区域），所有 Java 对象都存在于其中。与栈内存不同，编译器不需要知道对象必须在堆内存上停留多长时间。因此，用堆内存保存数据更具灵活性。创建一个对象时，只需用 new 命令实例化对象即可，当执行代码时，会自动在堆中进行内存分配。这种灵活性是有代价的：分配和清理堆内存要比栈内存需要更多的时间（如果可以用 Java 在栈内存上创建对象，就像在 C++ 中那样的话）。随着时间的推移，Java 的堆内存分配机制现在已经非常快，因此这不是一个值得关心的问题了。
+
+#    常量存储（Constant storage）常量值通常直接放在程序代码中，因为它们永远不会改变。如需严格保护，可考虑将它们置于只读存储器 ROM （只读存储器，Read Only Memory）中 ^3。
+
+#    非 RAM 存储（Non-RAM storage）数据完全存在于程序之外，在程序未运行以及脱离程序控制后依然存在。两个主要的例子：（1）序列化对象：对象被转换为字节流，通常被发送到另一台机器；（2）持久化对象：对象被放置在磁盘上，即使程序终止，数据依然存在。这些存储的方式都是将对象转存于另一个介质中，并在需要时恢复成常规的、基于 RAM 的对象。Java 为轻量级持久化提供了支持。而诸如 JDBC 和 Hibernate 这些类库为使用数据库存储和检索对象信息提供了更复杂的支持。
+
+!! 基本类型的存储
+
+有一组类型在 Java 中使用频率很高，它们需要特殊对待，这就是 Java 的基本类型。之所以这么说，是因为''它们的创建并不是通过 new 关键字来产生。通常 new 出来的对象都是保存在堆内存中的，以此方式创建小而简单的变量往往是不划算的。所以对于这些基本类型的创建方法，Java 使用了和 C/C++ 一样的策略。也就是说，不是使用 new 创建变量，而是使用一个“自动”变量。 这个变量直接存储&quot;值&quot;，并置于栈内存中，因此更加高效''。
+
+! `static`
+來源：
+https://lingcoder.github.io/OnJava8/#/book/03-Objects-Everywhere?id=static%e5%85%b3%e9%94%ae%e5%ad%97
+
+类是对象的外观及行为方式的描述。通常只有在使用 new 创建那个类的对象后，数据存储空间才被分配，对象的方法才能供外界调用。这种方式在两种情况下是不足的。
+
+    有时你只想为特定字段（注：也称为属性、域）分配一个共享存储空间，而不去考虑究竟要创建多少对象，甚至根本就不创建对象。
+
+    创建一个与此类的任何对象无关的方法。也就是说，即使没有创建对象，也能调用该方法。
+
+static 关键字（从 C++ 采用）就符合上述两点要求。当我们说某个事物是静态时，就意味着该字段或方法不依赖于任何特定的对象实例 。 即使我们从未创建过该类的对象，也可以调用其静态方法或访问其静态字段。相反，对于普通的非静态字段和方法，我们必须要先创建一个对象并使用该对象来访问字段或方法，因为非静态字段和方法必须与特定对象关联 ^6 。
+
+一些面向对象的语言使用类数据（class data）和类方法（class method），表示静态数据和方法只是作为类，而不是类的某个特定对象而存在的。有时 Java 文献也使用这些术语。
+
+</pre>
 </div>
 <div created="20200204045002374" modified="20200204045036304" tags="Java" title="Java學習資源">
 <pre>! 電子書
