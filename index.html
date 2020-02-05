@@ -473,6 +473,8 @@ Error message and password prompt
 
 <li>Human-computer interaction</li>
 
+<li>I/O Stream in Python</li>
+
 <li>Imperative vs. Declarative programming</li>
 
 <li>Implicature</li>
@@ -10060,7 +10062,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200205035412321" list="[[Unicode, UTF-8]] stream GettingStarted" modified="20200205044118392" title="$:/StoryList">
+<div created="20200205035412321" list="[[I/O Stream in Python]] stream GettingStarted" modified="20200205044620766" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -10883,8 +10885,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200205044115692" title="$:/temp/search">
-<pre>unicode</pre>
+<div created="20200114023551220" modified="20200205044606333" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -11393,6 +11395,67 @@ The work in these various fields put into focus the most basic and most general 
 ** 對抗 non-dialectic interaction
 * Mey, J. L. (2000). The computer as prosthesis-Reflections on the use of a metaphor. HERMES-Journal of Language and Communication in Business, (24), 15-30.
 * Saygin, A. P., &amp; Cicekli, I. (2002). Pragmatics in human-computer conversations. Journal of Pragmatics, 34(3), 227-258.</pre>
+</div>
+<div created="20200205051029894" modified="20200205072835487" tags="Python" title="I/O Stream in Python">
+<pre>```python
+import io
+```
+`io`套件文件：https://docs.python.org/3/library/io.html
+
+! 3 types of I/O
+* Text I/O
+* Byte I/O (buffered)
+* Raw I/O (unbuffered)
+
+! python string vs. `StringIO`
+`io.StringIO` is ''an in-memory stream for text I/O''.
+`StringIO`是將字串產生為 file-like object，並存在於記憶體中。用途是對於那些只要求file-like object的function，如果不想要真的建立一個檔案的話，可以使用 StringIO ''偽造''一個檔案並餵進函式。
+
+例如 `pandas.read_csv()` 這個函數要求一個 `.csv`檔對吧，正常來說，我必須先有一個`.csv`檔，才能把那個`.csv`檔餵進`pandas.read_csv()`。但現在如果我只是想要測試一下這個函數，而我手邊沒有任何`.csv`檔，而且我也懶得開一個檔案的話，那麼我可以使用`io.StringIO()`來立馬產生一個「像是`.csv`檔一樣的檔案」（畢竟說穿了`.csv`檔也不過就是符合特定格式的文字檔而已）。
+
+```python
+import io
+import pandas as pd
+
+a_file_like_object = io.StringIO()
+a_file_like_object.write(&quot;id,name\n1,Don\n2,Leo&quot;)
+csv_dataframe = pd.read_csv(a_file_like_object)
+print(csv_dataframe)
+
+# 會印出
+#      id     name
+# 0    1      Don
+# 1    2      Leo
+
+# 表示我們成功偽造了 csv 檔
+```
+
+在python當中，所謂 file-like object，就是指那些實作 `read()` 和 `write()` 方法的物件，也就是屬於檔案操作API中的方法。
+
+以下是 Python3 官方文件的[[術語表|https://docs.python.org/3/glossary.html]]中關於 file object 和 file-like object的說明：
+
+&lt;&lt;&lt;
+''file object''
+
+An object exposing a file-oriented API (with methods such as read() or write()) to an underlying resource. Depending on the way it was created, a file object can mediate access to a real on-disk file or to another type of storage or communication device (for example standard input/output, in-memory buffers, sockets, pipes, etc.). File objects are also called file-like objects or streams.
+
+There are actually three categories of file objects: raw binary files, buffered binary files and text files. Their interfaces are defined in the io module. The canonical way to create a file object is by using the open() function.
+
+''file-like object''
+
+A synonym for file object.
+&lt;&lt;&lt;
+
+我們可以看到在python3中，`file object`和`file-like object`和`stream`被視為同義詞。
+
+所有的file object皆是實作了`io.IOBase`這個`Abstract Base Class (ABC)`.
+
+* `io.IOBase`
+** `io.RawIOBase`
+*** `io.FileIO`
+** `io.BufferedIOBase`
+*** `io.FileBytesIO`
+** `io.TextIOBase`</pre>
 </div>
 <div created="20200115073239350" modified="20200115073351970" tags="programming" title="Imperative vs. Declarative programming">
 <pre>! 定義
