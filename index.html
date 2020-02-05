@@ -12037,7 +12037,7 @@ Test b = new Test();
 ! 參考資料
 * http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
-<div created="20200128162412598" modified="20200205040847796" tags="" title="stream">
+<div created="20200128162412598" modified="20200205041619873" tags="" title="stream">
 <pre>! Stream
 一個 Stream 就是一組資料的序列 (a sequence of data)。
 
@@ -12088,6 +12088,7 @@ A program uses an output stream to write data to a destination, one item at time
 
 *** The underlying low-level interface that corresponds to the actual medium very closely is a character buffer (the stream buffer, technically called the streambuf), which can be thought of as the backbone of the stream. Being a buffer, it does not hold the entire content of the stream, if the stream is large enough, so you can't use it for random access.
 * [[The Java tutorial: I/O Stream|https://docs.oracle.com/javase/tutorial/essential/io/streams.html]]
+** 有很清楚易懂的介紹，從Java上的Byte stream到character stream到buffered stream...等。
 ** ''An I/O Stream represents an input source or an output destination''. A stream can represent many different kinds of sources and destinations, including disk files, devices, other programs, and memory arrays.
 ** ''Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects''. Some streams simply pass on data; others manipulate and transform the data in useful ways.
 ** No matter how they work internally, all streams present the same simple model to programs that use them: ''A stream is a sequence of data''. ''A program uses an input stream to read data from a source, one item at a time''. ''A program uses an output stream to write data to a destination, one item at time.''
