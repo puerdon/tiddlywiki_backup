@@ -12037,7 +12037,7 @@ Test b = new Test();
 ! 參考資料
 * http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
-<div created="20200128162412598" modified="20200205034428275" tags="" title="stream">
+<div created="20200128162412598" modified="20200205035219661" tags="" title="stream">
 <pre>A stream is a sequence of data.
 
 A program uses an input stream to read data from a source, one item at a time
@@ -12058,7 +12058,12 @@ A program uses an output stream to write data to a destination, one item at time
 
 *** Using a serial representation gives a consistent interface for all devices. Many devices have the capability of both producing and consuming data at the same time; if data is being continually produced, the simplest way to think about reading that data is by doing a fetch of the next characters in a stream. If that data hasn't been produced yet (the user hasn't typed anything, or the network is still busy processing a packet), you wait for more data to become available, and the read will return that data. Even if you try to seek past the end (or beginning) of a stream, the stream pointer (i.e. get or put pointer) will remain at the boundary, making the situation safe. (Compare this with accessing data off the end of an array, where the behavior is undefined.)
 
-*** The underlying low-level interface that corresponds to the actual medium very closely is a character buffer (the stream buffer, technically called the streambuf), which can be thought of as the backbone of the stream. Being a buffer, it does not hold the entire content of the stream, if the stream is large enough, so you can't use it for random access.</pre>
+*** The underlying low-level interface that corresponds to the actual medium very closely is a character buffer (the stream buffer, technically called the streambuf), which can be thought of as the backbone of the stream. Being a buffer, it does not hold the entire content of the stream, if the stream is large enough, so you can't use it for random access.
+* [[The Java tutorial: I/O Stream|https://docs.oracle.com/javase/tutorial/essential/io/streams.html]]
+** ''An I/O Stream represents an input source or an output destination''. A stream can represent many different kinds of sources and destinations, including disk files, devices, other programs, and memory arrays.
+** ''Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects''. Some streams simply pass on data; others manipulate and transform the data in useful ways.
+** No matter how they work internally, all streams present the same simple model to programs that use them: ''A stream is a sequence of data''. ''A program uses an input stream to read data from a source, one item at a time''. ''A program uses an output stream to write data to a destination, one item at time'.'
+* [[Understanding Java I/O facilities|http://csis.pace.edu/~bergin/sol/java/gui/javaio.html]]</pre>
 </div>
 <div created="20200115085554256" modified="20200115093029155" tags="programming" title="struct in Swift">
 <pre>! Stored property
