@@ -10060,7 +10060,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200205031108989" list="stream Java筆記 GettingStarted" modified="20200205033714501" title="$:/StoryList">
+<div created="20200205035412321" list="stream GettingStarted" modified="20200205035412321" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -10883,8 +10883,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200205033712762" title="$:/temp/search">
-<pre>stream</pre>
+<div created="20200114023551220" modified="20200205035411114" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -12037,11 +12037,32 @@ Test b = new Test();
 ! 參考資料
 * http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
-<div created="20200128162412598" modified="20200205035219661" tags="" title="stream">
-<pre>A stream is a sequence of data.
+<div created="20200128162412598" modified="20200205040141623" tags="" title="stream">
+<pre>! Stream
+一個 Stream 就是一組資料的序列 (a sequence of data)。
 
-A program uses an input stream to read data from a source, one item at a time
+!! 請區分資料與資料序列
+資料是一整塊在那裡的，原則上是有限的。但資料流原則上是無限的。因此處理資料跟處理資料序列應該需要兩個不同的函數來完成。
 
+&lt;&lt;&lt;
+In computer science, a stream is a sequence of data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a time rather than in large batches.
+
+Streams are processed differently from batch data – normal functions cannot operate on streams as a whole, as they have potentially unlimited data, and formally, streams are codata (potentially unlimited), not data (which is finite).
+
+On Unix and related systems based on the C language, a stream is a source or sink of data, usually individual bytes or characters. Streams are an abstraction used when reading or writing files, or communicating over network sockets. The standard streams are three streams made available to all programs.
+
+I/O devices can be interpreted as streams, as they produce or consume potentially unlimited data over time.
+
+-- Wiki: Stream
+&lt;&lt;&lt;
+
+Stream 是一種軟體上的抽象。
+
+! Input stream
+當要從某一個資料來源（硬碟/檔案/網站）讀入資料序列時，會使用 Input stream。
+
+! Output stream
+當要把一串資料寫進某一個目的地時（硬碟/檔案/網站），會使用 Onput stream。
 A program uses an output stream to write data to a destination, one item at time
 
 ! References
@@ -12062,7 +12083,8 @@ A program uses an output stream to write data to a destination, one item at time
 * [[The Java tutorial: I/O Stream|https://docs.oracle.com/javase/tutorial/essential/io/streams.html]]
 ** ''An I/O Stream represents an input source or an output destination''. A stream can represent many different kinds of sources and destinations, including disk files, devices, other programs, and memory arrays.
 ** ''Streams support many different kinds of data, including simple bytes, primitive data types, localized characters, and objects''. Some streams simply pass on data; others manipulate and transform the data in useful ways.
-** No matter how they work internally, all streams present the same simple model to programs that use them: ''A stream is a sequence of data''. ''A program uses an input stream to read data from a source, one item at a time''. ''A program uses an output stream to write data to a destination, one item at time'.'
+** No matter how they work internally, all streams present the same simple model to programs that use them: ''A stream is a sequence of data''. ''A program uses an input stream to read data from a source, one item at a time''. ''A program uses an output stream to write data to a destination, one item at time.''
+
 * [[Understanding Java I/O facilities|http://csis.pace.edu/~bergin/sol/java/gui/javaio.html]]</pre>
 </div>
 <div created="20200115085554256" modified="20200115093029155" tags="programming" title="struct in Swift">
