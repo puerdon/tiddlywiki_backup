@@ -419,6 +419,8 @@ Error message and password prompt
 
 <li>度假 旅遊</li>
 
+<li>為什麼print()會在time.sleep()後才執行?</li>
+
 <li>程式學習資源</li>
 
 <li>德文</li>
@@ -10062,7 +10064,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200205035412321" list="[[I/O Stream in Python]] stream GettingStarted" modified="20200205044620766" title="$:/StoryList">
+<div created="20200205035412321" list="為什麼print()會在time.sleep()後才執行? [[I/O Stream in Python]] stream GettingStarted" modified="20200205044620766" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11046,6 +11048,40 @@ $ g++ &lt;file.cpp&gt; -o &lt;filename_of_output&gt;
 ! 在沙灘上
 * am Strand
 * im Sand</pre>
+</div>
+<div created="20200205073030637" modified="20200205074927344" tags="Python" title="為什麼print()會在time.sleep()後才執行?" type="">
+<pre>```python
+import time
+for i in range(6):
+    print(&quot;...&quot;, end=&quot; &quot;)
+    time.sleep(1)
+```
+照理說，我會期待這個程式會每秒多顯示一個&quot;... &quot;，但事實上的結果是，要等到5秒之後，所有的&quot;... &quot;才會一次顯示出來。
+
+這是因為`print()`預設是 line buffered的，也就是`print()`在預設情況下，每碰到一次換行符號，才會flush一次。
+
+所以項如果把程式改成：
+
+```python
+import time
+for i in range(6):
+    print(&quot;...&quot;, end=&quot;\n&quot;)
+    time.sleep(1)
+```
+
+就能夠每秒print一次。
+
+但問題是我就是不想要印出換行符號啊！那要怎麼辦？這時候可以透過`print`函數的命名參數`flush`，將`flush`設為`True`，就可以繞過line buffered的限制，直接強制顯示了：
+
+```python
+import time
+for i in range(6):
+    print(&quot;...&quot;, end=&quot; &quot;, flush=True)
+    time.sleep(1)
+```
+
+
+後來發現這其實和UNIX stdio buffering有關係。</pre>
 </div>
 <div created="20200128155359458" modified="20200128155428740" tags="" title="程式學習資源">
 <pre>* [[数据结构与算法设计(上) (edX)|https://www.edx.org/course/data-structures-and-algorithm-design-part-i]]</pre>
