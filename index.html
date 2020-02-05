@@ -11459,7 +11459,7 @@ https://www.hackingwithswift.com/glossary
 ! Documentation
 * [[The Swift programming language|https://docs.swift.org/swift-book/]]</pre>
 </div>
-<div created="20200204052522734" modified="20200205031130073" tags="Java" title="Java筆記">
+<div created="20200204052522734" modified="20200205033507209" tags="Java" title="Java筆記">
 <pre>! 数据存储
 
 來源：https://lingcoder.github.io/OnJava8/#/book/03-Objects-Everywhere?id=%e6%95%b0%e6%8d%ae%e5%ad%98%e5%82%a8
@@ -11495,7 +11495,23 @@ static 关键字（从 C++ 采用）就符合上述两点要求。当我们说�
 一些面向对象的语言使用类数据（class data）和类方法（class method），表示静态数据和方法只是作为类，而不是类的某个特定对象而存在的。有时 Java 文献也使用这些术语。
 
 ! `this`
-this 关键字只能在非静态方法内部使用。当你调用一个对象的方法时，this 生成了一个对象引用。</pre>
+this 关键字只能在非静态方法内部使用。当你调用一个
+对象的方法时，this 生成了一个对象引用。
+
+! 物件建立的過程
+概括一下创建对象的过程，假设有个名为 Dog 的类：
+
+# 即使没有显式地使用 static 关键字，构造器实际上也是静态方法。所以，当首次创建 Dog 类型的对象或是首次访问 Dog 类的静态方法或属性时，Java 解释器必须在类路径中查找，以定位 Dog.class。
+#    当加载完 Dog.class 后（后面会学到，这将创建一个 Class 对象），有关静态初始化的所有动作都会执行。因此，静态初始化只会在首次加载 Class 对象时初始化一次。
+#    当用 new Dog() 创建对象时，首先会在堆上为 Dog 对象分配足够的存储空间。
+#    分配的存储空间首先会被清零，即会将 Dog 对象中的所有基本类型数据设置为默认值（数字会被置为 0，布尔型和字符型也相同），引用被置为 null。
+#    执行所有出现在字段定义处的初始化动作。
+#    执行构造器。你将会在&quot;复用&quot;这一章看到，这可能会牵涉到很多动作，尤其当涉及继承的时候。
+
+! Miscellaneous
+* 一class中的member variable初始化過程必定先於constructor的呼叫
+
+</pre>
 </div>
 <div created="20200204045002374" modified="20200204045036304" tags="Java" title="Java學習資源">
 <pre>! 電子書
