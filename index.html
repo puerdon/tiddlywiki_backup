@@ -12037,7 +12037,7 @@ Test b = new Test();
 ! 參考資料
 * http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
-<div created="20200128162412598" modified="20200205041619873" tags="" title="stream">
+<div created="20200128162412598" modified="20200205041908188" tags="" title="stream">
 <pre>! Stream
 一個 Stream 就是一組資料的序列 (a sequence of data)。
 
@@ -12071,6 +12071,10 @@ Stream 是一種軟體上的抽象。
 ! Output stream
 當要把一串資料寫進某一個目的地時（硬碟/檔案/網站），會使用 Onput stream。
 A program uses an output stream to write data to a destination, one item at time
+
+! Buffered vs. Unbuffered stream
+|unbuffered|buffered|
+|且戰且走，遇到一個打一個|也是且戰且走，只是可能會等遇到十個在一次打；用在讀文字檔時，就是遇到一次換行再把所有讀到換行前的字符讀在一起，遇到換行之前，先把讀到的非換行字符讀進緩衝區放著備用|
 
 ! References
 * https://stackoverflow.com/questions/1830698/what-is-inputstream-output-stream-why-and-when-do-we-use-them
