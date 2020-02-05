@@ -12037,12 +12037,19 @@ Test b = new Test();
 ! 參考資料
 * http://blog.kenyang.net/2011/03/09/java-staticfinal</pre>
 </div>
-<div created="20200128162412598" modified="20200205040141623" tags="" title="stream">
+<div created="20200128162412598" modified="20200205040847796" tags="" title="stream">
 <pre>! Stream
 一個 Stream 就是一組資料的序列 (a sequence of data)。
 
 !! 請區分資料與資料序列
 資料是一整塊在那裡的，原則上是有限的。但資料流原則上是無限的。因此處理資料跟處理資料序列應該需要兩個不同的函數來完成。
+
+||batch data|stream|
+||靜態的|動態的|
+|||real time|
+||資料已經整堆堆在那邊|資料是隨著時間一個一個進出的|
+|工廠的隱喻|想像工廠的輸送帶，但我不是一批一批處理的，而是等所有資料都到目的地之後，把所有資料統一做一次的處理|想像工廠的輸送帶，資料是一個一個進來，一批一批處理的|
+使用場景|||像是對|
 
 &lt;&lt;&lt;
 In computer science, a stream is a sequence of data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a time rather than in large batches.
