@@ -441,6 +441,8 @@ Error message and password prompt
 
 <li>aufessen 吃完</li>
 
+<li>Big endian vs. Little endian</li>
+
 <li>C/C++學習資源</li>
 
 <li>C++筆記</li>
@@ -10066,7 +10068,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200205035412321" list="Kong 為什麼print()會在time.sleep()後才執行? [[I/O Stream in Python]] stream GettingStarted" modified="20200205044620766" title="$:/StoryList">
+<div created="20200205035412321" list="[[Big endian vs. Little endian]] Kong 為什麼print()會在time.sleep()後才執行? [[I/O Stream in Python]] stream GettingStarted" modified="20200205044620766" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11225,6 +11227,29 @@ https://developer.android.com/reference/android/os/AsyncTask
 </div>
 <div created="20200121024123376" modified="20200121024150144" tags="德文" title="aufessen 吃完">
 <pre>Ich habe das schon aufgegessen.</pre>
+</div>
+<div created="20200206030001683" modified="20200206031533176" tags="programming Computer" title="Big endian vs. Little endian">
+<pre>資料是儲存在記憶體一格一格的位址上的，記憶體有兩種儲存資料的方式，各家廠牌的不同。
+
+! 最高有效位 (Most Significant Bit) vs. 最低有效位 (Least Significant Bit)
+
+對一個十進位的數字，以 987654321 為例，事實上是：
+
+$$9 * 10 ^8 + 8 * 10 ^7 + ... + 2 * 10^1 + 1 * 10^0$$
+
+所以可以看到，9的位置是對整串數字大小影響最大的，所以9的這個位置稱為最高有效位。反之，1的位置也就是個位數，是對整串數字大小影響最小的，那麼這個位置就稱為最低有效位。
+
+! 記憶體位址
+
+
+```
+_________|
+記憶體位置 | 0x01
+```
+
+! Big endian
+一數值的最低有效位放在記憶體位址較小的地方，然後再慢慢往上。
+</pre>
 </div>
 <div created="20200128122151891" modified="20200128170014555" tags="" title="C/C++學習資源">
 <pre>* [[孔令傑：程式設計|http://www.im.ntu.edu.tw/~lckung/courses/public/PD/]]
