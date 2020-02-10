@@ -515,6 +515,8 @@ Error message and password prompt
 
 <li>MIDI Implementation Chart</li>
 
+<li>Music and Computers</li>
+
 <li>New Tiddler</li>
 
 <li>nginx</li>
@@ -10094,7 +10096,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200210065321651" list="MIDI" modified="20200210065321651" title="$:/StoryList">
+<div created="20200210065321651" list="[[Music and Computers]] MIDI" modified="20200210065321651" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11842,7 +11844,7 @@ Searle (1969: 4) quoted in Mey (2001: 339 Note 51)
 
 ! Ch 5 </pre>
 </div>
-<div created="20200207162134776" modified="20200210071748776" tags="MIDI" title="MIDI">
+<div created="20200207162134776" modified="20200210072022606" tags="MIDI" title="MIDI">
 <pre>! MIDI是...
 MIDI, which stands for “Musical Instrument Digital Interface,” is a system that allows  electronic  musical  instruments  and  computers  to  send  instructions to  each  other.  It  sounds  simple,  but  MIDI  provides  some  profound  creative opportunities.
 
@@ -11858,6 +11860,17 @@ MIDI, which stands for “Musical Instrument Digital Interface,” is a system t
 請參考：
 * https://ccrma.stanford.edu/~craig/14q/midifile/MidiFileFormat.html
 * http://www.cs.cmu.edu/~music/cmsip/readings/Standard-MIDI-file-format-updated.pdf
+
+A MIDI file always starts with a header chunk, and is followed by one or more track chunks.
+
+```
+MThd  &lt;length of header data&gt;
+&lt;header data&gt;
+MTrk  &lt;length of track data&gt;
+&lt;track data&gt;
+MTrk  &lt;length of track data&gt;
+&lt;track data&gt;
+```
 
 * 一定以`4d54 6864`開頭。
 
@@ -11890,6 +11903,19 @@ This can be very useful when attempting to determine if a device can send and/or
 Normally found in the back of the device’s manual, its MIDI implementation chart will consist of a list of available MIDI messages, whether the device incorporates those messages, and any special notes or limitations on how it deals with those messages. 
 
 For example, the chart will list the MIDI channels and modes, note numbers, and continuous controllers the device can respond to. Support for aftertouch, velocity, pitch bend (often with bit resolution), and program change will be indicated. Also listed will be recognition of system exclusive, system real time (clock commands), system common (song position, song select, etc.) and aux messages (local on/off, all notes off, active sensing, and so on).</pre>
+</div>
+<div created="20200210072150467" modified="20200210072232548" tags="書" title="Music and Computers">
+<pre>
+Music and Computers
+A Theoretical and Historical Approach
+
+Phil Burk, SoftSynth.com
+Larry Polansky, Department of Music, Dartmouth College
+Douglas Repetto, Computer Music Center, Columbia University
+Mary Roberts
+Dan Rockmore, Department of Mathematics, Dartmouth College 
+
+教科書連結：http://sites.music.columbia.edu/cmc/MusicAndComputers/</pre>
 </div>
 <div created="20200110030254938" modified="20200110030256507" tags="" title="New Tiddler">
 <pre></pre>
