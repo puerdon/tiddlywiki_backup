@@ -10094,7 +10094,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="MIDI [[MIDI Implementation Chart]] GettingStarted" title="$:/StoryList">
+<div created="20200210065321651" list="MIDI" modified="20200210065321651" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11842,7 +11842,7 @@ Searle (1969: 4) quoted in Mey (2001: 339 Note 51)
 
 ! Ch 5 </pre>
 </div>
-<div created="20200207162134776" modified="20200209085551241" tags="MIDI" title="MIDI">
+<div created="20200207162134776" modified="20200210071748776" tags="MIDI" title="MIDI">
 <pre>! MIDI是...
 MIDI, which stands for “Musical Instrument Digital Interface,” is a system that allows  electronic  musical  instruments  and  computers  to  send  instructions to  each  other.  It  sounds  simple,  but  MIDI  provides  some  profound  creative opportunities.
 
@@ -11855,8 +11855,27 @@ MIDI, which stands for “Musical Instrument Digital Interface,” is a system t
 !!3. The file formats for MIDI files
 
 ! Midi 檔 (又稱為Standard MIDI file) 的格式
-請參考：https://ccrma.stanford.edu/~craig/14q/midifile/MidiFileFormat.html
+請參考：
+* https://ccrma.stanford.edu/~craig/14q/midifile/MidiFileFormat.html
+* http://www.cs.cmu.edu/~music/cmsip/readings/Standard-MIDI-file-format-updated.pdf
 
+* 一定以`4d54 6864`開頭。
+
+*  SMF = &lt;header_chunk&gt; + &lt;track_chunk&gt;
+
+!! Header chunk (14 bytes)
+!!! header (4 bytes)
+* 一定是&quot;MThd&quot;: `0x4d546864`
+!!! header length (4 bytes)
+* 接下來的header內容有多長，通常就是6 bytes，所以是`0x00000006`
+!!! format (2 bytes)
+* `0000`: single track
+* `0001`: single song
+* `0002`: multiple song
+!!! numbers of track (2 bytes)
+* 本檔案有幾個track
+!!! unit of time for delta timing (2 bytes)
+!! track chunk
 
 * [[Tutorial on Midi.org|https://www.midi.org/articles/tutorials]]
 * [[An introduction to MIDI (.pdf)|https://www.midi.org/images/easyblog_articles/43/intromidi.pdf]]
