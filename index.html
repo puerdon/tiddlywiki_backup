@@ -425,6 +425,8 @@ Error message and password prompt
 
 <li>程式學習資源</li>
 
+<li>搜尋檔案檔名</li>
+
 <li>電子音樂學習資源</li>
 
 <li>德文</li>
@@ -10078,8 +10080,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200131091958650" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200128122150653" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20200120091512741" modified="20200211031431537" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200120091246407" modified="20200120091251145" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -10111,7 +10113,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="檔案權限和屬性" title="$:/StoryList">
+<div list="搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11132,6 +11134,49 @@ for i in range(6):
 </div>
 <div created="20200128155359458" modified="20200128155428740" tags="" title="程式學習資源">
 <pre>* [[数据结构与算法设计(上) (edX)|https://www.edx.org/course/data-structures-and-algorithm-design-part-i]]</pre>
+</div>
+<div created="20200211025703210" modified="20200211031608895" tags="Linux" title="搜尋檔案檔名">
+<pre>! 三大指令
+* `whereis`: 只找幾個特定目錄(`/bin`, `/share` 等等)而已，所以很快
+* `locate`
+* `find`
+
+! `find`
+```
+$ find &lt;PATH&gt; &lt;option&gt; &lt;action&gt;
+```
+
+!! `find`的選項與參數
+* 與時間有關的選項：共有 -atime, -ctime 與 -mtime ，以 -mtime 說明
+** `-mtime  n` ：n 為數字，意義為在 n 天之前的『一天之內』被更動過內容的檔案；
+** `-mtime +n` ：列出在 n 天之前(不含 n 天本身)被更動過內容的檔案檔名；
+** `-mtime -n` ：列出在 n 天之內(含 n 天本身)被更動過內容的檔案檔名。
+** `-newer file` ：file 為一個存在的檔案，列出比 file 還要新的檔案檔名
+* 與使用者或群組名稱有關的參數：
+** `-uid n` ：n 為數字，這個數字是使用者的帳號 ID，亦即 UID ，這個 UID 是記錄在/etc/passwd 裡面與帳號名稱對應的數字。這方面我們會在第四篇介紹。
+** `-gid n` ：n 為數字，這個數字是群組名稱的 ID，亦即 GID，這個 GID 記錄在/etc/group，相關的介紹我們會第四篇說明～
+** `-user name` ：name 為使用者帳號名稱喔！例如 dmtsai 
+** `-group name`：name 為群組名稱喔，例如 users ；
+**`-nouser`    ：尋找檔案的擁有者不存在 /etc/passwd 的人！
+** `-nogroup`   ：尋找檔案的擁有群組不存在於 /etc/group 的檔案！
+* 與檔案權限及名稱有關的參數：
+** ''`-name filename`：搜尋檔案名稱為 filename 的檔案''
+** `-size [+-]SIZE`：搜尋比 SIZE 還要大(+)或小(-)的檔案。這個 SIZE 的規格有：
+***c: 代表 byte， k: 代表 1024bytes。所以，要找比 50KB還要大的檔案，就是『 -size +50k 』
+** ''`-type TYPE`    ：搜尋檔案的類型為 TYPE 的，類型主要有：一般正規檔案 (f), 裝置檔案 (b, c),目錄 (d), 連結檔 (l), socket (s), 及 FIFO (p) 等屬性。''
+** `-perm mode`  ：搜尋檔案權限『剛好等於』 mode 的檔案，這個 mode 為類似 chmod的屬性值，舉例來說， -rwsr-xr-x 的屬性為 4755 ！
+** `-perm -mode` ：搜尋檔案權限『必須要全部囊括 mode 的權限』的檔案，舉例來說，我們要搜尋 -rwxr--r-- ，亦即 0744 的檔案，使用 -perm -0744，當一個檔案的權限為 -rwsr-xr-x ，亦即 4755 時，也會被列出，因為 -rwsr-xr-x 的屬性已經囊括了 -rwxr--r-- 的屬性了。
+** `-perm /mode` ：搜尋檔案權限『包含任一 mode 的權限』的檔案，舉例來說，我們搜尋-rwxr-xr-x ，亦即 -perm /755 時，但一個檔案屬性為 -rw-------
+也會被列出來，因為他有 -rw.... 的屬性存在！
+
+!! `find`的特殊用法：針對找出的檔案/資料夾直接做進一步的動作
+
+!!! 例：直接對找到的檔案做`ls -l`
+```bash
+$ find . -type f -name &quot;python*&quot; -exec ls -l {} \;
+```
+
+把指令放在`-exec`和`\;`中間，並且要記得在新指令的檔案/路徑的參數放`{}`。</pre>
 </div>
 <div created="20200206063800375" modified="20200206074322805" tags="" title="電子音樂學習資源">
 <pre>* [[Electronic Music Interactive 2|https://pages.uoregon.edu/emi/index.php]]
