@@ -421,6 +421,8 @@ Error message and password prompt
 
 <li>度假 旅遊</li>
 
+<li>查看非純文字檔: od</li>
+
 <li>為什麼print()會在time.sleep()後才執行?</li>
 
 <li>程式學習資源</li>
@@ -10080,8 +10082,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200131091958650" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200211031431537" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20200120091512741" modified="20200211031611027" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20200120091246407" modified="20200120091251145" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -10113,7 +10115,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
+<div list="[[查看非純文字檔: od]] 搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11097,6 +11099,22 @@ $ g++ &lt;file.cpp&gt; -o &lt;filename_of_output&gt;
 ! 在沙灘上
 * am Strand
 * im Sand</pre>
+</div>
+<div created="20200211031841037" modified="20200211032139700" tags="Linux" title="查看非純文字檔: od">
+<pre>`od`可以印出binary file或data file。
+
+```bash
+$ od [-t TYPE] 檔案
+```
+
+! 選項或參數
+*-t  ：後面可以接各種『類型 (TYPE)』的輸出，例如：
+**      a       ：利用預設的字元來輸出；
+**     c       ：使用 ASCII 字元來輸出
+**      d[size] ：利用十進位(decimal)來輸出資料，每個整數佔用 size bytes ；
+**      f[size] ：利用浮點數值(floating)來輸出資料，每個數佔用 size bytes ；
+**      o[size] ：利用八進位(octal)來輸出資料，每個整數佔用 size bytes ；
+**      x[size] ：利用十六進位(hexadecimal)來輸出資料，每個整數佔用 size bytes ；</pre>
 </div>
 <div created="20200205073030637" modified="20200205074927344" tags="Python" title="為什麼print()會在time.sleep()後才執行?" type="">
 <pre>```python
