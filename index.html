@@ -447,6 +447,8 @@ Error message and password prompt
 
 <li>諮商/語言學</li>
 
+<li>檔案系統</li>
+
 <li>檔案特殊權限: SUID, SGID, SBIT</li>
 
 <li>檔案預設權限</li>
@@ -10147,7 +10149,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200211033732946" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[LVM (Logical Volume Manager)]] [[掛載 (mount)]] 磁碟 [[檔案特殊權限: SUID, SGID, SBIT]] [[Ghost notes]] EQing 在Reason上混人聲 在Reason上錄人聲 檔案隱藏屬性" title="$:/StoryList">
+<div list="檔案系統" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11214,8 +11216,7 @@ for i in range(6):
 後來發現這其實和UNIX stdio buffering有關係。</pre>
 </div>
 <div created="20200211072645223" modified="20200211074417447" tags="Computer Linux" title="掛載 (mount)">
-<pre>
-&lt;&lt;&lt;
+<pre>&lt;&lt;&lt;
 我們現在知道整個Linux系統使用的是目錄樹架構，但是''我們的檔案資料其實是放置在磁碟分割槽當中的， 現在的問題是『如何結合目錄樹的架構與磁碟內的資料』呢？ 這個時候就牽扯到『掛載(mount)』的問題啦！''
 
 所謂的『掛載』就是''利用一個目錄當成進入點，將磁碟分割槽的資料放置在該目錄下''； 也就是說，''進入該目錄就可以讀取該分割槽的意思''。這個動作我們稱為『掛載』，那個進入點的目錄我們稱為『掛載點』。 由於整個Linux系統最重要的是根目錄，因此根目錄一定需要掛載到某個分割槽的。 至於其他的目錄則可依使用者自己的需求來給予掛載到不同的分割槽。
@@ -11372,6 +11373,21 @@ Als ich nach der Schule zu meinem Motorrad kam, steckte der Schlüssel noch im S
 
 
 在諮商領域，Neural Linguistic programming 似乎佔有一席之地。</pre>
+</div>
+<div created="20200211075058969" modified="20200211075959553" tags="Linux" title="檔案系統">
+<pre>*superblock：記錄此 filesystem 的整體資訊，包括inode/block的總量、使用量、剩餘量， 以及檔案系統的格式與相關資訊等；
+*inode：記錄檔案的屬性，一個檔案佔用一個inode，同時記錄此檔案的資料所在的 block 號碼；
+*block：實際記錄檔案的內容，若檔案太大時，會佔用多個 block 。
+
+! Disk Allocation Methods
+!! Indexed allocation
+* 例如：UNIX filesystem (檔案內容散落在哪幾個data block，統一由inode紀錄)
+!! Linked allocation
+* 例如：FAT, FAT32 (每一塊data block皆記錄著下一塊相連的檔案內容在哪個data block，像linked list)
+
+! References
+* [[Disk allocation methods (Hackpad)|https://hackmd.io/@Pl-eQT9CQaS0jhExKqL8_w/rkZE0cv7f?type=view]]
+</pre>
 </div>
 <div created="20200211062416673" modified="20200211065406558" tags="Linux" title="檔案特殊權限: SUID, SGID, SBIT">
 <pre>! SUID (Set UID)
