@@ -493,6 +493,8 @@ Error message and password prompt
 
 <li>erkennen 認得出來/看出</li>
 
+<li>EXT2</li>
+
 <li>Filter</li>
 
 <li>General noun</li>
@@ -10113,11 +10115,11 @@ Error message and password prompt
 <div created="20200121022851029" modified="20200121022851029" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/katex">
 <pre>yes</pre>
 </div>
-<div created="20200110131601796" modified="20200131091958650" title="$:/state/showeditpreview">
+<div created="20200110131601796" modified="20200211084127932" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200211065408393" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20200120091512741" modified="20200211080449263" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200120091246407" modified="20200120091251145" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -10149,7 +10151,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200211033732946" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="檔案系統" title="$:/StoryList">
+<div created="20200211080431858" list="檔案系統 EXT2" modified="20200211080431858" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11802,6 +11804,30 @@ EQ一定要先於所有效果器之前。效果器不能拿來掩飾錯誤的頻
 <pre>* etw. (an D.) erkennen (透過...)看出...
 ** Woran erkennt man ein echter Freund?
  </pre>
+</div>
+<div created="20200211080452153" modified="20200211084329796" tags="Linux [[file system]]" title="EXT2">
+<pre>Ext2 檔案系統在格式化的時候基本上是區分為多個區塊群組 (block group) 的，每個區塊群組都有獨立的 inode/block/superblock 系統。
+
+! 一個block group的組成
+* data block
+* inode table
+**    該檔案的存取模式(read/write/excute)；
+**    該檔案的擁有者與群組(owner/group)；
+**    該檔案的容量；
+**    該檔案建立或狀態改變的時間(ctime)；
+**    最近一次的讀取時間(atime)；
+**   最近修改的時間(mtime)；
+**    定義檔案特性的旗標(flag)，如 SetUID...；
+**    該檔案真正內容的指向 (pointer)；
+* superblock:
+** 未使用與已使用的 inode / block 數量；
+** block 與 inode 的大小 (block 為 1, 2, 4K，inode 為 128bytes 或 256bytes)；
+** filesystem 的掛載時間、最近一次寫入資料的時間、最近一次檢驗磁碟 (fsck) 的時間等檔案系統的相關資訊；
+** 一個 valid bit 數值，若此檔案系統已被掛載，則 valid bit 為 0 ，若未被掛載，則 valid bit 為 1 。
+* filesystem description: 描述每個 block group 的開始與結束的 block 號碼，以及說明每個區段 (superblock, bitmap, inodemap, data block) 分別介於哪一個 block 號碼之間
+* inode bitmap: 記錄使用與未使用的 inode 號碼
+* block bitmap: 可以知道哪些 block 是空的
+</pre>
 </div>
 <div created="20200207054845176" modified="20200207054905187" tags="Synthesizer" title="Filter">
 <pre>* Cutoff frequency
