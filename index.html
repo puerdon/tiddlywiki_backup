@@ -519,6 +519,8 @@ Error message and password prompt
 
 <li>linguistic philosophy vs. philosophy of language</li>
 
+<li>Linux檔案的三種時間標記: mtime, atime, ctime</li>
+
 <li>Mey, J. L. (2001). Pragmatics: An introduction (2nd ed.).</li>
 
 <li>MIDI</li>
@@ -10115,7 +10117,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[查看非純文字檔: od]] 搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
+<div list="[[Linux檔案的三種時間標記: mtime, atime, ctime]] [[查看非純文字檔: od]] 搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11902,6 +11904,28 @@ Linguistic philosophy is the attempt to solve particular philosophical problems 
 Searle (1969: 4) quoted in Mey (2001: 339 Note 51)
 &lt;&lt;&lt;
 </pre>
+</div>
+<div created="20200211032649989" modified="20200211033720318" tags="Linux" title="Linux檔案的三種時間標記: mtime, atime, ctime">
+<pre>! 三種時間標記
+*modification time (mtime)：
+**當該檔案的內容資料變更時，就會更新這個時間！內容資料指的是檔案的內容，而不是檔案的屬性或權限喔！
+*status time (ctime)：
+**當該檔案的『狀態 (status)』改變時，就會更新這個時間，舉例來說，像是權限與屬性被更改了，都會更新這個時間。
+*access time (atime)：
+**當『該檔案的內容被取用』時，就會更新這個讀取時間 (access)。舉例來說，我們使用 cat 去讀取 /etc/man_db.conf ， 就會更新該檔案的 atime 了。
+
+! `ls`預設顯示的是mtime
+
+! 讓`ls`顯示其他兩種時間
+```bash
+$ ls -l &lt;file&gt; --time=atime
+```
+
+```bash
+$ ls -l &lt;file&gt; --time=ctime
+```
+
+! 用`touch &lt;現有檔案&gt;`可將mtime和atime修改為目前時間</pre>
 </div>
 <div created="20200113082530789" modified="20200126152720514" tags="語言學 書 pragmatics" title="Mey, J. L. (2001). Pragmatics: An introduction (2nd ed.).">
 <pre>! 架構
