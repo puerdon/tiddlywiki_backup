@@ -11374,14 +11374,14 @@ Als ich nach der Schule zu meinem Motorrad kam, steckte der Schlüssel noch im S
 
 在諮商領域，Neural Linguistic programming 似乎佔有一席之地。</pre>
 </div>
-<div created="20200211075058969" modified="20200211075959553" tags="Linux" title="檔案系統">
+<div created="20200211075058969" modified="20200211080221602" tags="Linux" title="檔案系統">
 <pre>*superblock：記錄此 filesystem 的整體資訊，包括inode/block的總量、使用量、剩餘量， 以及檔案系統的格式與相關資訊等；
 *inode：記錄檔案的屬性，一個檔案佔用一個inode，同時記錄此檔案的資料所在的 block 號碼；
 *block：實際記錄檔案的內容，若檔案太大時，會佔用多個 block 。
 
 ! Disk Allocation Methods
 !! Indexed allocation
-* 例如：UNIX filesystem (檔案內容散落在哪幾個data block，統一由inode紀錄)
+* 例如：UNIX filesystem: EXT2 (檔案內容散落在哪幾個data block，統一由inode紀錄)
 !! Linked allocation
 * 例如：FAT, FAT32 (每一塊data block皆記錄著下一塊相連的檔案內容在哪個data block，像linked list)
 
