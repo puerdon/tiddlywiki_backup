@@ -437,6 +437,8 @@ Error message and password prompt
 
 <li>諮商/語言學</li>
 
+<li>檔案預設權限</li>
+
 <li>檔案權限和屬性</li>
 
 <li>abgeben</li>
@@ -10114,10 +10116,10 @@ Error message and password prompt
 <div created="20200113082459399" modified="20200126152730328" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Drafts</pre>
 </div>
-<div created="20200110030424748" modified="20200126152731423" title="$:/state/tab/sidebar--595412856">
+<div created="20200110030424748" modified="20200211033732946" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Linux檔案的三種時間標記: mtime, atime, ctime]] [[查看非純文字檔: od]] 搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
+<div list="檔案預設權限 [[Linux檔案的三種時間標記: mtime, atime, ctime]] [[查看非純文字檔: od]] 搜尋檔案檔名 檔案權限和屬性" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11259,6 +11261,34 @@ Als ich nach der Schule zu meinem Motorrad kam, steckte der Schlüssel noch im S
 
 
 在諮商領域，Neural Linguistic programming 似乎佔有一席之地。</pre>
+</div>
+<div created="20200211033936440" modified="20200211034408389" tags="Linux" title="檔案預設權限">
+<pre>若使用者建立為『檔案』則預設『沒有可執行( x )權限』，亦即只有 rw 這兩個項目，也就是最大為 666 分，預設權限如下：
+
+```
+-rw-rw-rw-
+```
+
+若使用者建立為『目錄』，則由於 x 與是否可以進入此目錄有關，因此預設為所有權限均開放，亦即為 777 分，預設權限如下：
+
+```
+drwxrwxrwx
+```
+
+! `umask`指令
+```
+$ umask
+0022
+```
+
+先不要看第一個`0`的話，目前`umask`的設定為`022`，也就是如果現在建立一個新檔案的話，檔案擁有者的權限要從預設減掉`0` (6-0=6)、檔案所屬群組的權限要從預設減掉`2` (6-2=4)、其他人對該檔案的權限要從預設減掉`2` (6-2=4)，所以一個新檔的權限會變成`644`。
+
+如果想要修改這樣的預設情況，可以下
+
+```
+$ umask xxx
+```
+修改成`xxx`的遮罩。</pre>
 </div>
 <div created="20200211022123844" modified="20200211024739828" tags="Linux" title="檔案權限和屬性">
 <pre>! 檔案權限
