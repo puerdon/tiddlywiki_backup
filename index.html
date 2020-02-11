@@ -417,6 +417,8 @@ Error message and password prompt
 
 <li>在mac上編譯C++程式</li>
 
+<li>在Reason上混人聲</li>
+
 <li>在Reason上錄人聲</li>
 
 <li>信箱亂碼</li>
@@ -10123,7 +10125,7 @@ Error message and password prompt
 <div created="20200110030424748" modified="20200211033732946" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="在Reason上錄人聲 檔案隱藏屬性" title="$:/StoryList">
+<div list="在Reason上混人聲 在Reason上錄人聲 檔案隱藏屬性" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11088,6 +11090,31 @@ $ g++ &lt;file.cpp&gt;
 $ g++ &lt;file.cpp&gt; -o &lt;filename_of_output&gt;
 ```
 會產生 `file.out` 檔</pre>
+</div>
+<div created="20200211043018451" modified="20200211045339556" tags="mixing Reason" title="在Reason上混人聲">
+<pre>* 先錄音才有混音，錄音很重要
+* 再加任何效果器之前，先讓人聲被聽清楚
+** 人聲太小，就把樂器音量調低
+** 平衡各樂器之間的聲音
+** 不要讓曲子變成搶當最大聲的競賽
+** 越早有vocal進曲子越好，才不會一開始放了一大堆酷炫的樂器，結果跟人聲打架
+* EQ
+** 不同聲音佔據不同頻率
+** 人聲
+*** 本體: 2-4kHz (可用mixer的HMF調高些)
+*** air: 10+kHz
+* 去噝聲(De-Esser): 本質上就是compressor，4-9kHz
+**** 可先用mixer開啟LPF/HPF，調到對的頻率後，按&quot;Filters to dynamic sidechain&quot;，然後再去同一軌mixer上方啟動COMP，調對的Release, ratio, threshold後，也要開啟PEAK mode，讓attack快點。
+**** 偷懶的話，也可直接對音量做automation，有嘶聲的地方拉小聲一點
+* 如果人聲還是不夠出來，那就要做doubling (keyword: thickening vocal with doubling)
+** 主要的那一軌大聲點，次要的那軌小聲點
+** 次要那軌的EQ也可以只留下一些部分，讓兩軌人聲不會打架
+* Compressor：大聲不會太大，小聲不會太小
+* 使用parellel channel凸顯人聲
+** 複製同一軌人聲，但做不同處理
+! References
+* [[How to mix vocals - Reason Tips|https://www.youtube.com/watch?v=AFNjogndmfU]]
+** [[How to mix vocals (part 2) - Reason Tips|https://www.youtube.com/watch?v=DPYO8MNCnXw]]</pre>
 </div>
 <div created="20200211042457873" modified="20200211043012842" tags="Reason 錄音" title="在Reason上錄人聲">
 <pre>https://www.youtube.com/watch?v=nMUjzaADkFY
