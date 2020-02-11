@@ -11255,12 +11255,32 @@ $ find . -type f -name &quot;python*&quot; -exec ls -l {} \;
 * [[Learning Music Ableton|https://learningmusic.ableton.com/]]
 比較是音樂概論方面的教學</pre>
 </div>
-<div created="20200211070401352" modified="20200211070720376" tags="Linux Computer" title="磁碟">
+<div created="20200211070401352" modified="20200211071821578" tags="Linux Computer" title="磁碟">
 <pre>! 磁碟的硬體組成
 http://linux.vbird.org/linux_basic/0105computers.php#pc_hd
 
+* sector 磁區
+* track/cylinder
+
+!! 傳輸介面
+
+* SATA
+* SAS
+* USB
+
 ! 磁碟分割
 http://linux.vbird.org/linux_basic/0130designlinux.php#partition
+
+!! MBR (Master Boot Record)
+* 支援Window
+* 機管理程式紀錄區與分割表則通通放在磁碟的第一個磁區， 這個磁區通常是 512bytes 的大小 (舊的磁碟磁區都是 512bytes 喔！)，所以說，第一個磁區 512bytes 會有這兩個資料：
+** 主要開機記錄區(Master Boot Record, MBR)：可以安裝開機管理程式的地方，有446 bytes
+** 分割表(partition table)：記錄整顆硬碟分割的狀態，有64 bytes
+** 只能有4個primary partitions
+
+!! GPT (GUID Partition Table)
+*GPT 將磁碟所有區塊以此 LBA(預設為 512bytes 喔！) 來規劃，而第一個 LBA (Logical Block Address) 稱為 LBA0 (從 0 開始編號)。
+*與 MBR 僅使用第一個 512bytes 區塊來紀錄不同， GPT 使用了 34 個 LBA 區塊來紀錄分割資訊！同時與過去 MBR 僅有一的區塊，被幹掉就死光光的情況不同， GPT 除了前面 34 個 LBA 之外，整個磁碟的最後 33 個 LBA 也拿來作為另一個備份
 
 ! 磁碟的裝置檔名
 |裝置	|裝置在Linux內的檔名|
