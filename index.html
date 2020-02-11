@@ -11805,7 +11805,7 @@ EQ一定要先於所有效果器之前。效果器不能拿來掩飾錯誤的頻
 ** Woran erkennt man ein echter Freund?
  </pre>
 </div>
-<div created="20200211080452153" modified="20200211084329796" tags="Linux [[file system]]" title="EXT2">
+<div created="20200211080452153" modified="20200211085130628" tags="Linux [[file system]]" title="EXT2">
 <pre>Ext2 檔案系統在格式化的時候基本上是區分為多個區塊群組 (block group) 的，每個區塊群組都有獨立的 inode/block/superblock 系統。
 
 ! 一個block group的組成
@@ -11819,6 +11819,7 @@ EQ一定要先於所有效果器之前。效果器不能拿來掩飾錯誤的頻
 **   最近修改的時間(mtime)；
 **    定義檔案特性的旗標(flag)，如 SetUID...；
 **    該檔案真正內容的指向 (pointer)；
+** ''inode不會記檔名!''
 * superblock:
 ** 未使用與已使用的 inode / block 數量；
 ** block 與 inode 的大小 (block 為 1, 2, 4K，inode 為 128bytes 或 256bytes)；
