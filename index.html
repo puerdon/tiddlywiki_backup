@@ -11678,7 +11678,7 @@ https://developer.android.com/reference/android/os/AsyncTask
 <div created="20200121024123376" modified="20200121024150144" tags="德文" title="aufessen 吃完">
 <pre>Ich habe das schon aufgegessen.</pre>
 </div>
-<div created="20200213072920298" modified="20200213075800115" tags="Linux bash" title="bash">
+<div created="20200213072920298" modified="20200213080416894" tags="Linux bash" title="bash">
 <pre>! 取用變數
 `$VARIABLE` 或者 `${VARIABLE}`
 
@@ -11705,9 +11705,24 @@ $ source script.sh
 這會直接在父程式中執行。
 
 所以每次更改`.bashrc`檔後，才會要執行：
+
 ```
 $ source ~/.bashrc
-```</pre>
+```
+
+! 串接多個指令
+
+!! `cmd1; cmd2`
+
+分別執行兩個指令，不管cmd1有沒有出錯。(回傳0代表沒有出錯，回傳非0代表出錯。要用`$?`來看。)
+
+!! `cmd1 &amp;&amp; cmd2`
+
+如果cmd1回傳0，才能再繼續執行cmd2，否則跳出。
+
+!! `cmd1 || cmd2`
+
+如果cmd1回傳非0，才能再繼續執行cmd2。</pre>
 </div>
 <div created="20200206030001683" modified="20200206031533176" tags="programming Computer" title="Big endian vs. Little endian">
 <pre>資料是儲存在記憶體一格一格的位址上的，記憶體有兩種儲存資料的方式，各家廠牌的不同。
