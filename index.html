@@ -13084,7 +13084,7 @@ struct Person {
 
 代表人物還有 Logacre。</pre>
 </div>
-<div created="20200214030019876" modified="20200214030149516" tags="" title="TiddlyWiki使用技巧">
+<div created="20200214030019876" modified="20200214034425243" tags="" title="TiddlyWiki使用技巧">
 <pre>!! 列出所有以H開頭的tiddlers。
 
 ```
@@ -13095,7 +13095,18 @@ struct Person {
 
 ```
 &lt;&lt;list-links &quot;[tag[語言學]]&quot;&gt;&gt;
-```</pre>
+```
+
+! Tranclusion
+
+把一個tiddler的內容動態鑲嵌在另一個tiddler之中。
+
+!! 最基本的語法
+```
+{{tiddler_title}}
+```
+會顯示該tiddler的所有內文。`{{tiddler_title}}` 其實是 `{{tiddler_title!!text}}`的縮寫。
+</pre>
 </div>
 <div created="20200121015704764" modified="20200121055622945" tags="" title="Transformer">
 <pre>* Transformer by 李宏毅: https://www.youtube.com/watch?v=ugWDIIOHtPA
