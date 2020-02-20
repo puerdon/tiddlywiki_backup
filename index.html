@@ -619,8 +619,6 @@ Error message and password prompt
 
 <li>nginx in docker</li>
 
-<li>notes on music information retrieval</li>
-
 <li>Ogden and Richards. (1923). The Meaning of Meaning: A Study of the Influence of Language upon Thought and of the Science of Symbolism</li>
 
 <li>Oscillator</li>
@@ -660,6 +658,8 @@ Error message and password prompt
 <li>Sample rate</li>
 
 <li>Sampling</li>
+
+<li>server上開jupyter notebook + 本機ssh tunneling</li>
 
 <li>slow/fast modulation</li>
 
@@ -10268,7 +10268,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[notes on music information retrieval]] GettingStarted" title="$:/StoryList">
+<div list="[[server上開jupyter notebook + 本機ssh tunneling]] GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -12850,9 +12850,6 @@ Context: 	location
 * [[Tips for Deploying NGINX (Official Image) with Docker (docker blog)|https://www.docker.com/blog/tips-for-deploying-nginx-official-image-with-docker/]]
 * [[How To Run Nginx in a Docker Container on Ubuntu 14.04|https://www.digitalocean.com/community/tutorials/how-to-run-nginx-in-a-docker-container-on-ubuntu-14-04]]</pre>
 </div>
-<div created="20200219163134863" modified="20200219163214616" tags="audio [[digital audio processing]] Music tutorial website" title="notes on music information retrieval">
-<pre>https://musicinformationretrieval.com/index.html</pre>
-</div>
 <div created="20200120082128220" modified="20200120082302160" tags="書 語言學" title="Ogden and Richards. (1923). The Meaning of Meaning: A Study of the Influence of Language upon Thought and of the Science of Symbolism">
 <pre></pre>
 </div>
@@ -13068,6 +13065,18 @@ https://www.youtube.com/watch?v=O7Pb6WHv0rM</pre>
 </div>
 <div created="20200213063214678" modified="20200213065720519" tags="Music sampling" title="Sampling">
 <pre>Sampling is a general way of representing a continuous sound signal using a discrete medium</pre>
+</div>
+<div created="20200220143402447" modified="20200220152610531" tags="[[jupyter notebook]] ssh" title="server上開jupyter notebook + 本機ssh tunneling">
+<pre>! server side
+
+```
+$ jupyter notebook --no-browser --port=&lt;指定一個port&gt;
+```
+
+! local side
+```
+$ ssh -N -F -L [local_port]:localhost:[remote_port] &lt;username&gt;@&lt;server_ip&gt;
+```</pre>
 </div>
 <div created="20200207054444403" modified="20200207054511446" tags="Synthesizer" title="slow/fast modulation">
 <pre>slow modulations are usually perceived as changes to behavior (changes that are applied to the sound), while fast modulations are usually perceived as changes to timbre (changes to the character of the sound itself).</pre>
