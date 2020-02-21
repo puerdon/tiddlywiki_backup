@@ -193,6 +193,8 @@ Error message and password prompt
 
 <li>$:/state/folded/Recording Vocals and Selecting a Microphone</li>
 
+<li>$:/state/image-picker/system--1042088166</li>
+
 <li>$:/state/peek-stylesheets/mode/--994748944</li>
 
 <li>$:/state/showeditpreview</li>
@@ -626,6 +628,8 @@ Error message and password prompt
 <li>Oscillator</li>
 
 <li>Pd (Pure Data)</li>
+
+<li>port forwarding</li>
 
 <li>Pragmatics</li>
 
@@ -10224,14 +10228,17 @@ Error message and password prompt
 <div created="20200218030438684" modified="20200218030438684" title="$:/state/folded/Recording Vocals and Selecting a Microphone">
 <pre>hide</pre>
 </div>
+<div created="20200221084505741" modified="20200221084506491" title="$:/state/image-picker/system--1042088166">
+<pre>hide</pre>
+</div>
 <div created="20200213080822970" modified="20200213080825001" title="$:/state/peek-stylesheets/mode/--994748944">
 <pre>restored</pre>
 </div>
 <div created="20200110131601796" modified="20200211084127932" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200217171954600" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20200120091512741" modified="20200221083606018" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200214024138060" modified="20200214024145125" title="$:/state/tab--1575919232">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
@@ -10272,7 +10279,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200221072124584" list="[[ssh (Secured Shell)]] [[Linux 帳號管理]] 檔案預設權限 GettingStarted" modified="20200221072124584" title="$:/StoryList">
+<div created="20200221072124584" list="[[port forwarding]] [[ssh (Secured Shell)]] [[Linux 帳號管理]] 檔案預設權限 GettingStarted" modified="20200221072124584" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -12940,6 +12947,34 @@ https://puredata.info/
 *`bang`
 * `toggle`: 開關
 * `array`: 像一個示波器，顯示數值。（其實聲音就是數值）</pre>
+</div>
+<div created="20200221082318579" modified="20200221084647950" tags="[[ssh (Secured Shell)]] [[port forwarding]]" title="port forwarding">
+<pre>! Local port forwarding
+
+```bash
+$ ssh -L &lt;local_port&gt;:&lt;remote_address&gt;:&lt;remote_port&gt; &lt;user_name&gt;@&lt;ssh_server_ip&gt;
+```
+
+`-L`參數即是Local port forwarding。
+
+[img[https://www.looklinux.com/wp-content/uploads/2017/10/local-port-forwarding.jpg]]
+
+情境：
+假設我在學相的server上(ip: 111.222.333.444)的port 8889啟動了jupyter notebook server，但由於學校server防火牆的設定，讓我不能夠在家裡透過`http://111.222.333.444:8889`直接進入server上的jupyter notebook。這時候我就可以透過ssh local port forwarding，在自己的電腦上開一個port專門與遠端的port做溝通。這時候我並不是直接連到jupyter notebook的server，而是透過server上的ssh server作為中介。
+
+!! references
+* [[SSH Tunneling: Local Port Forwarding|https://www.looklinux.com/ssh-tunneling-local-port-forwarding/]]
+
+! Remote port forwarding
+俗稱的反向ssh。
+
+
+! Dynamic port forwarding
+
+
+! References
+* [[The Black Magic Of SSH / SSH Can Do That?|https://vimeo.com/54505525]]
+* https://myapollo.com.tw/zh-tw/ssh-port-forwarding/</pre>
 </div>
 <div created="20200113080504123" modified="20200113083707428" tags="語言學" title="Pragmatics">
 <pre>一詞最早由美國哲學家、符號學家Charles W. Morris (1901-1979)於1938年的著作//Foundations of the theory of signs //中提出：
