@@ -12948,8 +12948,10 @@ https://puredata.info/
 * `toggle`: 開關
 * `array`: 像一個示波器，顯示數值。（其實聲音就是數值）</pre>
 </div>
-<div created="20200221082318579" modified="20200221084647950" tags="[[ssh (Secured Shell)]] [[port forwarding]]" title="port forwarding">
-<pre>! Local port forwarding
+<div created="20200221082318579" modified="20200221085712460" tags="[[ssh (Secured Shell)]] [[port forwarding]]" title="port forwarding">
+<pre>port forwarding俗稱tunneling。
+
+! Local port forwarding
 
 ```bash
 $ ssh -L &lt;local_port&gt;:&lt;remote_address&gt;:&lt;remote_port&gt; &lt;user_name&gt;@&lt;ssh_server_ip&gt;
@@ -12968,9 +12970,17 @@ $ ssh -L &lt;local_port&gt;:&lt;remote_address&gt;:&lt;remote_port&gt; &lt;user_
 ! Remote port forwarding
 俗稱的反向ssh。
 
+```bash
+$ ssh -D 
+```
 
 ! Dynamic port forwarding
 
+又叫做Socks proxy。
+
+```bash
+$ ssh -R
+```
 
 ! References
 * [[The Black Magic Of SSH / SSH Can Do That?|https://vimeo.com/54505525]]
