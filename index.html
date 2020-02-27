@@ -603,6 +603,8 @@ Error message and password prompt
 
 <li>Linux 帳號管理</li>
 
+<li>Linux用驚嘆號叫出歷史指令</li>
+
 <li>Linux檔案的三種時間標記: mtime, atime, ctime</li>
 
 <li>LVM (Logical Volume Manager)</li>
@@ -10285,7 +10287,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="在其他腳本中運行scrapy GettingStarted" title="$:/StoryList">
+<div list="Linux用驚嘆號叫出歷史指令 GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -12564,6 +12566,38 @@ $ passwd &lt;別人的user_name&gt;
 http://linux.vbird.org/linux_basic/0410accountmanager.php
 
 </pre>
+</div>
+<div created="20200227084905639" modified="20200227085349268" tags="Linux [[history expansion]]" title="Linux用驚嘆號叫出歷史指令">
+<pre>參考連結：
+https://www.gnu.org/software/bash/manual/html_node/History-Interaction.html#History-Interaction
+
+
+! 如果不想讓指令自動執行
+要記得把 histverify 打開。
+
+先看shell option：
+
+```
+$ shopt
+```
+
+如果histverify是off，再打開：
+
+```
+$ shopt -s histverify
+```
+
+! 從history中搜尋以某字串開頭的指令
+
+```
+$ !&lt;直接要搜尋的字串輸入在驚嘆號後方&gt;
+```
+
+! 從history中搜尋包含某字串的指令
+
+```
+$ !?&lt;把要搜尋的字串包在問號中&gt;?
+```</pre>
 </div>
 <div created="20200211032649989" modified="20200211033720318" tags="Linux" title="Linux檔案的三種時間標記: mtime, atime, ctime">
 <pre>! 三種時間標記
