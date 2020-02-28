@@ -695,6 +695,8 @@ Error message and password prompt
 
 <li>TiddlyWiki使用技巧</li>
 
+<li>tmux</li>
+
 <li>Tone.js</li>
 
 <li>Transformer</li>
@@ -10291,7 +10293,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="在bash指令列中使用vi模式 [[bash shell程式設計]] Linux用驚嘆號叫出歷史指令 GettingStarted" title="$:/StoryList">
+<div list="tmux GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11114,7 +11116,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200222125822895" title="$:/temp/search">
+<div created="20200114023551220" modified="20200228050424777" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
@@ -13531,6 +13533,71 @@ struct Person {
 ```
 \define
 ```</pre>
+</div>
+<div created="20200228050425591" modified="20200228060908419" tags="Linux tmux" title="tmux">
+<pre>
+Server &gt; session &gt; window &gt; pane
+
+
+! Session
+
+!! `Prefix + (`
+將client切換到下一個session
+
+!! `Prefix + )`
+將client切換到上一個session
+
+!! `Prefix + s`
+互動選擇session
+
+!! `Prefix + $`
+重新命名session
+
+```
+$ tmux switch-client -t &lt;session name&gt;
+```
+
+
+! Window
+
+!! `Prefix + n`
+到下一個w
+
+!! `Prefix + p`
+到上一個window
+
+!! `Prefix + 數字`
+到第n個window
+
+!! `Prefix + ‘`
+跳出index輸入框
+
+!! `Prefix + f`
+以字串搜尋window
+
+!! `Prefix + w`
+跳出所有可用的window
+
+!! `Prefix + .`
+將現在window移動到第 n 個
+
+!! `Prefix + &amp;`
+Prompts killing window
+
+
+! Pane
+
+!! `Prefix + 上下左右`
+移動到不同pane
+
+!! `Prefix + z`
+放大(zoom in)某個pane。再按一次就回復到分割狀態。
+
+! 和其他user共用tmux
+
+重點在於要把啟動tmux的socket的群組權限改為要共用的使用者共同的群組。
+
+參考：https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen</pre>
 </div>
 <div created="20200217074229804" modified="20200217074309546" tags="JavaScript Music [[Web Audio]]" title="Tone.js">
 <pre>https://tonejs.github.io/
