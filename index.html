@@ -457,6 +457,8 @@ Error message and password prompt
 
 <li>在Reason上錄人聲</li>
 
+<li>和其他user共用tmux session</li>
+
 <li>信箱亂碼</li>
 
 <li>度假 旅遊</li>
@@ -10293,7 +10295,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="tmux GettingStarted" title="$:/StoryList">
+<div list="[[和其他user共用tmux session]] tmux GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11342,6 +11344,11 @@ $ g++ &lt;file.cpp&gt; -o &lt;filename_of_output&gt;
 
 * 不要調reason上的audio track的音量fader，而是要調錄音介面上的Gain。最好讓歌聲的Peak 音量不要大於 -12, -13 db。要怎麼看呢？到Rack &gt; Hardware Interface 上的 Big meter去看Peak(橘色的)，
 不是VU。 </pre>
+</div>
+<div created="20200228060957918" modified="20200228061029353" tags="Linux tmux" title="和其他user共用tmux session">
+<pre>重點在於要把啟動tmux的socket的群組權限改為要共用的使用者共同的群組。
+
+參考：https://www.howtoforge.com/sharing-terminal-sessions-with-tmux-and-screen</pre>
 </div>
 <div created="20200126150305411" modified="20200126152647900" tags="" title="信箱亂碼">
 <pre>* https://www.epochtimes.com/b5/1/4/20/n78617.htm
