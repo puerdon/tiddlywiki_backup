@@ -529,6 +529,8 @@ Error message and password prompt
 
 <li>Big endian vs. Little endian</li>
 
+<li>Binary search tree</li>
+
 <li>C/C++學習資源</li>
 
 <li>C++筆記</li>
@@ -10309,7 +10311,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="Indexing B-tree tree [[含有b-tree indexing關鍵字的語料庫書籍]] [[Corpus Workbench]] GettingStarted" title="$:/StoryList">
+<div created="20200307141306521" list="B-tree Indexing GettingStarted" modified="20200307141412979" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11925,10 +11927,12 @@ https://developer.android.com/reference/android/os/AsyncTask
 
 以 C13 這個和弦來說，A voicing就是中規中矩從根音按每兩度往上的音：C E G B D。而B voicing則是打破這樣的規則，按 C B D E G A。</pre>
 </div>
-<div created="20200307131434543" modified="20200307141304829" tags="資料結構" title="B-tree">
+<div created="20200307131434543" modified="20200309105948038" tags="資料結構" title="B-tree">
 <pre>* 一種 self-balancing tree (每次儲存新資料時，會自動調整自己的結構)
 * 1972年發明的
 * 想法來自 m-way search tree ([[Binary search tree]]為最基本的結構)
+** m-way search tree 擴展了 binary tree 一個node只能有一個key、2個children的限制
+*** 3-way search tree，就是指每個node可以有3個children、3-1 個key
 
 ! B-tree Demo
 https://www.cs.usfca.edu/~galles/visualization/BTree.html
@@ -12010,6 +12014,9 @@ _________|
 ! Big endian
 一數值的最低有效位放在記憶體位址較小的地方，然後再慢慢往上。
 </pre>
+</div>
+<div created="20200307141309693" modified="20200307141332655" title="Binary search tree">
+<pre>每個node都只能有1個key和2個children。</pre>
 </div>
 <div created="20200128122151891" modified="20200128170014555" tags="" title="C/C++學習資源">
 <pre>* [[孔令傑：程式設計|http://www.im.ntu.edu.tw/~lckung/courses/public/PD/]]
