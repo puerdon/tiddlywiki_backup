@@ -711,6 +711,8 @@ Error message and password prompt
 
 <li>redis</li>
 
+<li>Relational data model</li>
+
 <li>Reveal.js 做投影片的js</li>
 
 <li>Sample rate</li>
@@ -10339,7 +10341,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="梵文輸入法 GettingStarted" title="$:/StoryList">
+<div list="[[Relational data model]] GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11162,7 +11164,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200312112845474" title="$:/temp/search">
+<div created="20200114023551220" modified="20200310153603248" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
@@ -11493,10 +11495,8 @@ for i in range(6):
 <div created="20200311123350247" modified="20200311123519123" tags="梵文" title="梵文書寫句尾">
 <pre>若詞尾為 visarga (-h) 和 anusvaara (-m)，則在書寫上不和下一個詞的字首相連。</pre>
 </div>
-<div created="20200312112333657" modified="20200312112432401" tags="梵文" title="梵文輸入法">
-<pre>https://github.com/ratreya/lipika-ime
-
-Transliteration scheme: https://github.com/ratreya/lipika-ime/wiki/Transliteration-Schemes</pre>
+<div created="20200312112333657" modified="20200312112356081" tags="梵文" title="梵文輸入法">
+<pre>https://github.com/ratreya/lipika-ime</pre>
 </div>
 <div created="20200214070115359" modified="20200214093422641" tags="Linux 鳥哥Linux基礎文件" title="鳥哥Linux基礎文件學習進度">
 <pre>! 第一部份：Linux的規劃與安裝
@@ -15498,6 +15498,46 @@ https://www.youtube.com/watch?v=O7Pb6WHv0rM</pre>
 <pre>an In-memory ~NoSQL database.
 
 * [[資料庫的好夥伴：Redis|https://blog.techbridge.cc/2016/06/18/redis-introduction/]]</pre>
+</div>
+<div created="20200312120900893" modified="20200312122819708" tags="database" title="Relational data model">
+<pre>線上課程連結：http://www.infocobuild.com/education/audio-video-courses/computer-science/FundamentalsOfDatabaseSystems-IIT-Kanpur/lecture-02.html
+
+! Relation
+* An unordered set of n-ary tuple
+
+! Attribute
+例如：
+
+* 姓名 = {Don, Tom, Tony}
+* 性別 = {男, 女}
+
+!! atomicity of attribute
+一屬性裡的每個值是不可再分割的。
+
+! Relation Scheme
+
+* a description
+* 定義一個relation中，每個
+
+! Relation instance
+可以想成是table裡的每個row。
+
+! Super key
+* identifies a unique tuple
+* 姓名不能作為super key，因為可能有兩個人會有相同的名字。因此光憑名字不能指認出一個獨一無二的人。
+* set of attributes
+
+! Candidate key
+* minimal super key
+* 一Relation可能會有多個 candidate key
+
+!! Primary key (一種 candidate key)
+* 在眾多Candidate key中，會有一個被指派為primary key
+
+!! Secondary key (一種 candidate key)
+
+! Foreign key
+在一個relation r1 中，其中有個foreign key是來自另一個relation r2的 primary key。在這個情境中，r1被稱為referencing relation，r2被成為referenced relation。</pre>
 </div>
 <div created="20200128113323930" modified="20200128115859826" tags="JavaScript" title="Reveal.js 做投影片的js">
 <pre>~GitHub: https://github.com/hakimel/reveal.js
