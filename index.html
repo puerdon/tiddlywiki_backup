@@ -539,8 +539,6 @@ Error message and password prompt
 
 <li>Bhattacharya. 2014. Fundatmentals of database indexing and searching</li>
 
-<li>Big data</li>
-
 <li>Big endian vs. Little endian</li>
 
 <li>Binary search tree</li>
@@ -584,6 +582,8 @@ Error message and password prompt
 <li>EXT2</li>
 
 <li>Filter</li>
+
+<li>filter in MongoDB</li>
 
 <li>FoLiA (Format for Linguistic Annotation)</li>
 
@@ -10345,7 +10345,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Big data]] [[Relational data model]] GettingStarted" title="$:/StoryList">
+<div created="20200312143204987" list="[[filter in MongoDB]] [[Relational algebra]] GettingStarted" modified="20200312143204987" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -12071,37 +12071,6 @@ $ source ~/.bashrc
 ! Part II: Low-dimensional index structure
 !! Ch2 Hashing
 !!</pre>
-</div>
-<div created="20200312123828193" modified="20200312130412636" tags="[[data science]]" title="Big data">
-<pre>https://www.coursera.org/learn/big-data-management/lecture/j5lgf/summary-of-introduction-to-big-data-part-1
-
-! sources of big data
-* machine
-* people
-* organization
-
-! Characteristics of big data
-* volume: size
-* variety: 複雜性
-* velocity: 速度
-* veracity: 噪音/雜訊 -&gt; 資料品質
-* valence:相連性 (e.g. graph db)
-
-! process of data science
-!! big data engineering
-# acquiring data
-# prepare data
-!! computational big data science
-
-! Hadoop ecosystem
-
-! Data management
-!! data ingestion
-* 資料來源多多？
-* 資料會多大？
-* 資料多常更新？
-* 如何處理不好的資料？
-* 數據過載怎麼辦？</pre>
 </div>
 <div created="20200206030001683" modified="20200206031533176" tags="programming Computer" title="Big endian vs. Little endian">
 <pre>資料是儲存在記憶體一格一格的位址上的，記憶體有兩種儲存資料的方式，各家廠牌的不同。
@@ -14364,6 +14333,13 @@ EQ一定要先於所有效果器之前。效果器不能拿來掩飾錯誤的頻
 <div created="20200207054845176" modified="20200207054905187" tags="Synthesizer" title="Filter">
 <pre>* Cutoff frequency
 * Resonance</pre>
+</div>
+<div created="20200312143222706" modified="20200312145723722" tags="database mongoDB" title="filter in MongoDB">
+<pre>! equality filter
+!range filter
+```
+{&quot;col_name&quot;: {&quot;$gte&quot;: 2007, &quot;$lt&quot;: 2018}}
+```</pre>
 </div>
 <div created="20200312080147256" modified="20200312080219567" tags="語料庫 標記" title="FoLiA (Format for Linguistic Annotation)">
 <pre>Format for Linguistic Annotation
