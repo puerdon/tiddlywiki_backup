@@ -10315,8 +10315,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200211084127932" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200316061850274" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20200120091512741" modified="20200316061920368" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20200214024138060" modified="20200214024145125" title="$:/state/tab--1575919232">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
@@ -12343,15 +12343,15 @@ API to the functionality of the CWB.
 <div created="20200312081053532" modified="20200312082225052" tags="語料庫" title="CQL Query Visualization">
 <pre>TEITOK所提供的CQL query visualization</pre>
 </div>
-<div created="20200213080918544" modified="20200310153621225" tags="$:/tags/Stylesheet" title="custom CSS">
+<div created="20200213080918544" modified="20200316061933730" tags="$:/tags/Stylesheet" title="custom CSS">
 <pre>/* 修改h1標題 */
-.tc-tiddler-body h1 {
+.tc-tiddler-body h1, .tc-tiddler-preview-preview h1 {
 margin-top: 2em;
 background-color: #575757;
 color: white;
 }
 
-.tc-tiddler-body h2 {
+.tc-tiddler-body h2, .tc-tiddler-preview-preview h2 {
 background-color: #c5c5c5;
 }</pre>
 </div>
@@ -14937,11 +14937,72 @@ Joseph E. Grimes earned his PhD from Cornell University in 1960, where soon afte
 ! 相關著作
 * [[Grimes, E. (1975). A thread of discourse.]]</pre>
 </div>
-<div created="20200316061810871" modified="20200316061917575" tags="[[jupyter notebook]]" title="jupyter notebook更改佈景主題">
+<div created="20200316061810871" modified="20200316062129500" tags="[[jupyter notebook]]" title="jupyter notebook更改佈景主題">
 <pre>! 安裝
 
 ```
 $ pip install jupyterthemes
+```
+
+https://github.com/dunovank/jupyter-themes
+
+! 下指令
+
+```
+# list available themes
+# onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
+jt -l
+
+# select theme...
+jt -t chesterish
+
+# restore default theme
+# NOTE: Need to delete browser cache after running jt -r
+# If this doesn't work, try starting a new notebook session.
+jt -r
+
+# toggle toolbar ON and notebook name ON
+jt -t grade3 -T -N
+
+# toggle kernel logo.  kernel logo is in same container as name
+# toggled with -N.  That means that making the kernel logo visible is
+# pointless without also making the name visible
+jt -t grade3 -N -kl
+
+# set code font to 'Roboto Mono' 12pt
+# (see monospace font table below)
+jt -t onedork -f roboto -fs 12
+
+# set code font to Fira Mono, 11.5pt
+# 3digit font-sizes get converted into float (115--&gt;11.5)
+# 2digit font-sizes &gt; 25 get converted into float (85--&gt;8.5)
+jt -t solarizedd -f fira -fs 115
+
+# set font/font-size of markdown (text cells) and notebook (interface)
+# see sans-serif &amp; serif font tables below
+jt -t oceans16 -tf merriserif -tfs 10 -nf ptsans -nfs 13
+
+# adjust cell width (% screen width) and line height
+jt -t chesterish -cellw 90% -lineh 170
+
+# or set the cell width in pixels by leaving off the '%' sign
+jt -t solarizedl -cellw 860
+
+# fix the container-margins on the intro page (defaults to 'auto')
+jt -t monokai -m 200
+
+# adjust cursor width (in px) and make cursor red
+# options: b (blue), o (orange), r (red), p (purple), g (green), x (font color)
+jt -t oceans16 -cursc r -cursw 5
+
+# choose alternate prompt layout (narrower/no numbers)
+jt -t grade3 -altp
+
+# my two go-to styles
+# dark
+jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
+# light
+jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
 ```</pre>
 </div>
 <div created="20200205090913017" modified="20200206023256270" tags="Reason" title="Kong">
