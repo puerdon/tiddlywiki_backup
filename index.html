@@ -645,6 +645,8 @@ Error message and password prompt
 
 <li>Joseph E. Grimes</li>
 
+<li>jupyter notebook以虛擬環境的python為kernal</li>
+
 <li>jupyter notebook更改佈景主題</li>
 
 <li>Kong</li>
@@ -10357,7 +10359,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200316061842745" list="[[custom CSS]] [[jupyter notebook更改佈景主題]] GettingStarted" modified="20200316061842745" title="$:/StoryList">
+<div created="20200316061842745" list="[[jupyter notebook以虛擬環境的python為kernal]] [[custom CSS]] [[jupyter notebook更改佈景主題]] GettingStarted" modified="20200316061842745" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -14936,6 +14938,29 @@ Joseph E. Grimes earned his PhD from Cornell University in 1960, where soon afte
 
 ! 相關著作
 * [[Grimes, E. (1975). A thread of discourse.]]</pre>
+</div>
+<div created="20200316062501493" modified="20200316063019875" tags="[[jupyter notebook]]" title="jupyter notebook以虛擬環境的python為kernal">
+<pre>
+! 安裝 kernal
+
+```
+python -m ipykernel install --user --name myenv --display-name &quot;Python (myenv)&quot;
+```
+
+參考連結：https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+
+
+! 列出現有的所有kernal
+
+```
+jupyter kernelspec list
+```
+
+! 移除kernal
+
+```
+jupyter kernelspec remove &lt;env_name&gt;
+```</pre>
 </div>
 <div created="20200316061810871" modified="20200316062129500" tags="[[jupyter notebook]]" title="jupyter notebook更改佈景主題">
 <pre>! 安裝
