@@ -16170,14 +16170,14 @@ struct Person {
 ! Reference
 * https://www.hackingwithswift.com/100/swiftui/8</pre>
 </div>
-<div created="20200319161244986" modified="20200319163330496" tags="統計" title="t-test">
+<div created="20200319161244986" modified="20200319163638236" tags="統計" title="t-test">
 <pre>用於比較兩組樣本之間的平均值是否有顯著差異。例如施用實驗藥物和安慰劑的平均值對照。
 
 $$ 
 t = \frac{variance\ between \ groups}{variance\ within\ groups}
 $$
 
-分子是兩組樣本的平均值的差。分母則是兩個
+分子是兩組樣本的平均值的差。如果單看分子的話，雖然是很直觀的比較，但單看兩組樣本的平均數的差之所以不能夠做出什麼推論的原因在於，很有可能兩組樣本的變異很大，變異越大就會讓兩組樣本看起來可能是產生自相同的母體。所以才要把變異數考慮進來，並且放在分母。也就是說，如果兩組樣本的變異數越小，t值會越大，t值越大，也就越能夠用來說明平均值的差是有解釋力的。
 
 t-value越大代表兩個群體是不同群體。
 
