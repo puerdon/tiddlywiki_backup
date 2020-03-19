@@ -759,6 +759,8 @@ Error message and password prompt
 
 <li>struct in Swift</li>
 
+<li>t-test</li>
+
 <li>Tagmemics</li>
 
 <li>TEITOK</li>
@@ -10367,7 +10369,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Inverted index]] GettingStarted" title="$:/StoryList">
+<div list="t-test GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -16167,6 +16169,42 @@ struct Person {
 
 ! Reference
 * https://www.hackingwithswift.com/100/swiftui/8</pre>
+</div>
+<div created="20200319161244986" modified="20200319163330496" tags="統計" title="t-test">
+<pre>用於比較兩組樣本之間的平均值是否有顯著差異。例如施用實驗藥物和安慰劑的平均值對照。
+
+$$ 
+t = \frac{variance\ between \ groups}{variance\ within\ groups}
+$$
+
+分子是兩組樣本的平均值的差。分母則是兩個
+
+t-value越大代表兩個群體是不同群體。
+
+! 種類
+
+!! Independent-samples t-test
+又稱為 between-samples 或 unpaired-samples t-test
+
+!! Paired-samples t-test
+又稱為within-sunbjects, repeated-measures, dependent-samples。同一組樣本前後測兩次。
+
+!! One-sample t-test
+一樣本群體的平均值去和一個給定的平均值做比較。例如測試這群學生的IQ值平均是否與IQ 100之間的差距。
+
+! Limitation
+
+* 測試的推論結果只適用於與樣本結構相同的其他母體
+* 樣本分佈需要大致符合常態分佈
+* 比較的兩邊樣本要有大致一樣的數量
+* 樣本之間需要是互相獨立的
+* 資料值最好是interval level
+
+! 如何表達t-test的結果
+見參考連結第一個的最後一部分。
+
+! 參考連結
+* StatCast: what is t-test: https://www.youtube.com/watch?v=0Pd3dc1GcHc</pre>
 </div>
 <div created="20200110033208779" modified="20200110034154504" tags="語言學" title="Tagmemics">
 <pre>以Pike為首，在1950-60年代與transformational generative linguistics相匹敵。
