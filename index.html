@@ -585,8 +585,6 @@ Error message and password prompt
 
 <li>Discourse structure/relations/parsing</li>
 
-<li>Draft of 't-test'</li>
-
 <li>Enharmonic</li>
 
 <li>Envelope: ADSR</li>
@@ -10371,7 +10369,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200320104921946" list="[[Inverted index]] GettingStarted" modified="20200320104921946" title="$:/StoryList">
+<div created="20200320104921946" list="t-test [[Inverted index]] GettingStarted" modified="20200320105530523" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -14466,45 +14464,6 @@ Discourse structure is a type of structure used to “refer to the structure of 
 * Martin, J. R. (2009). Discourse studies. in Halliday, M. A. K. and Webster, J. J. (eds.) Continuum companion to systemic functional linguistics.
 ** 回顧介紹SFL框架下的da研究 </pre>
 </div>
-<div created="20200319161244986" draft.of="t-test" draft.title="t-test" modified="20200319164017431" tags="統計" title="Draft of 't-test'">
-<pre>用於比較兩組樣本之間的平均值是否有顯著差異。例如施用實驗藥物和安慰劑的平均值對照。
-
-$$ 
-t = \frac{variance\ between \ groups}{variance\ within\ groups} = \frac{signal}{noise}
-$$
-
-分子是兩組樣本的平均值的差。如果單看分子的話，雖然是很直觀的比較，但單看兩組樣本的平均數的差之所以不能夠做出什麼推論的原因在於，很有可能兩組樣本的變異很大，變異越大就會讓兩組樣本看起來可能是產生自相同的母體。所以才要把變異數考慮進來，並且放在分母。也就是說，如果兩組樣本的變異數越小，t值會越大，t值越大，也就越能夠用來說明平均值的差是有解釋力的。
-
-所以也可以把分子看成是signal，分母看成是noise（變異數越大，當然雜訊就是越多）。
-
-t-value越大代表兩個群體是不同群體。
-
-! 種類
-
-!! Independent-samples t-test
-又稱為 between-samples 或 unpaired-samples t-test
-
-!! Paired-samples t-test
-又稱為within-sunbjects, repeated-measures, dependent-samples。同一組樣本前後測兩次。
-
-!! One-sample t-test
-一樣本群體的平均值去和一個給定的平均值做比較。例如測試這群學生的IQ值平均是否與IQ 100之間的差距。
-
-! Limitation
-
-* 測試的推論結果只適用於與樣本結構相同的其他母體
-* 樣本分佈需要大致符合常態分佈
-* 比較的兩邊樣本要有大致一樣的數量
-* 樣本之間需要是互相獨立的
-* 資料值最好是interval level
-
-! 如何表達t-test的結果
-見參考連結第一個的最後一部分。
-
-! 參考連結
-* ~StatCast: what is t-test: https://www.youtube.com/watch?v=0Pd3dc1GcHc
-* Student's t-test: https://www.youtube.com/watch?v=pTmLQvMM-1M</pre>
-</div>
 <div created="20200217073727546" modified="20200217073747703" tags="Music" title="Enharmonic">
 <pre>異名同音。</pre>
 </div>
@@ -14859,7 +14818,7 @@ interpreting an utterance is ultimately a matter of guesswork, or (to used a mor
 
 </pre>
 </div>
-<div created="20200319074532263" modified="20200320105528863" tags="Indexing" title="Inverted index">
+<div created="20200319074532263" modified="20200320105955611" tags="Indexing" title="Inverted index">
 <pre>對每個term t，要儲存所有出現這個term的文件id。
 
 * [[posting list]]
@@ -14871,8 +14830,10 @@ interpreting an utterance is ultimately a matter of guesswork, or (to used a mor
 * tokenize 
 
 !! Indexer
-* Token sequence
-** Sequence of (modified token, Doc ID) pairs
+* 1. Token sequence
+** Sequence of (modified token, doc ID) pairs
+* 2. Sort by term and doc ID
+* 3. Merge into dictionary (存term和freq count) and posting list (存每個term的doc ID)
 
 ! 參考資料
 * Manning的課程：https://www.youtube.com/watch?v=bnP6TsqyF30
@@ -16226,7 +16187,7 @@ struct Person {
 ! Reference
 * https://www.hackingwithswift.com/100/swiftui/8</pre>
 </div>
-<div created="20200319161244986" modified="20200319163742703" tags="統計" title="t-test">
+<div created="20200319161244986" modified="20200320105534598" tags="統計" title="t-test">
 <pre>用於比較兩組樣本之間的平均值是否有顯著差異。例如施用實驗藥物和安慰劑的平均值對照。
 
 $$ 
@@ -16262,7 +16223,8 @@ t-value越大代表兩個群體是不同群體。
 見參考連結第一個的最後一部分。
 
 ! 參考連結
-* StatCast: what is t-test: https://www.youtube.com/watch?v=0Pd3dc1GcHc</pre>
+* ~StatCast: what is t-test: https://www.youtube.com/watch?v=0Pd3dc1GcHc
+* Student's t-test: https://www.youtube.com/watch?v=pTmLQvMM-1M</pre>
 </div>
 <div created="20200110033208779" modified="20200110034154504" tags="語言學" title="Tagmemics">
 <pre>以Pike為首，在1950-60年代與transformational generative linguistics相匹敵。
