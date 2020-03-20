@@ -477,6 +477,8 @@ Error message and password prompt
 
 <li>做到一半的事; 待讀</li>
 
+<li>將audio放進video裡面</li>
+
 <li>掛載 (mount)</li>
 
 <li>梵文字典</li>
@@ -10373,7 +10375,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200320153902516" list="用python將音樂從影片中分離 GettingStarted" modified="20200320153902516" title="$:/StoryList">
+<div created="20200320153902516" list="將audio放進video裡面 用python將音樂從影片中分離 GettingStarted" modified="20200320153902516" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11534,6 +11536,18 @@ for i in range(6):
 * A Scalable Document-based Architechture
 ! 待看網站
 * Reverb techonology: in mongodb</pre>
+</div>
+<div created="20200320153953763" modified="20200320154105558" tags="Python moviepy" title="將audio放進video裡面">
+<pre>```python
+ from moviepy.editor import *
+
+v = VideoFileClip(&quot;張國榮＿我 國語版（直播測試版）.MOV&quot;)
+
+a = AudioFileClip(&quot;修直播的我.mp3&quot;)
+
+new = v.set_audio(a.set_duration(v.duration))
+
+new.write_videofile(&quot;a.mp4&quot;, codec='libx264', audio_codec='aac', temp_audiofile='temp-audio.m4a', remove_temp=True)</pre>
 </div>
 <div created="20200211072645223" modified="20200211074417447" tags="Computer Linux" title="掛載 (mount)">
 <pre>&lt;&lt;&lt;
