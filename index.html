@@ -10371,7 +10371,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div list="[[Draft of 't-test']] GettingStarted" title="$:/StoryList">
+<div created="20200320104921946" list="[[Inverted index]] GettingStarted" modified="20200320104921946" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -14859,8 +14859,23 @@ interpreting an utterance is ultimately a matter of guesswork, or (to used a mor
 
 </pre>
 </div>
-<div created="20200319074532263" modified="20200319151959301" tags="Indexing" title="Inverted index">
-<pre>* Manning的課程：https://www.youtube.com/watch?v=bnP6TsqyF30
+<div created="20200319074532263" modified="20200320105528863" tags="Indexing" title="Inverted index">
+<pre>對每個term t，要儲存所有出現這個term的文件id。
+
+* [[posting list]]
+** 可以用 linked-list 或 variable length array 實作
+
+! 步驟
+!! 前處理
+* 斷詞
+* tokenize 
+
+!! Indexer
+* Token sequence
+** Sequence of (modified token, Doc ID) pairs
+
+! 參考資料
+* Manning的課程：https://www.youtube.com/watch?v=bnP6TsqyF30
 * 簡單的介紹
 ** 1: https://www.youtube.com/watch?v=QA_vuzx9mt4
 ** 2: Inverted index https://www.youtube.com/watch?v=bFrO8piASKg</pre>
