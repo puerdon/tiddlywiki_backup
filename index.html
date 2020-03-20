@@ -449,6 +449,8 @@ Error message and password prompt
 
 <li>平衡音訊實驗室 (部落格)</li>
 
+<li>用python將音樂從影片中分離</li>
+
 <li>在其他腳本中運行scrapy</li>
 
 <li>在bash指令列中使用vi模式</li>
@@ -10371,7 +10373,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200320104921946" list="[[wav to mp3 using python]] t-test [[Inverted index]] GettingStarted" modified="20200320105530523" title="$:/StoryList">
+<div created="20200320104921946" list="用python將音樂從影片中分離 [[wav to mp3 using python]] t-test [[Inverted index]] GettingStarted" modified="20200320105530523" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11349,6 +11351,17 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 </div>
 <div created="20200219065809233" modified="20200219072025387" tags="mixing blog" title="平衡音訊實驗室 (部落格)">
 <pre>https://a85115230.pixnet.net/blog</pre>
+</div>
+<div created="20200320140738718" modified="20200320140958467" tags="Python" title="用python將音樂從影片中分離">
+<pre>使用套件
+`moviepy` (https://github.com/Zulko/moviepy)
+
+```python
+from moviepy.editor import *
+
+video = VideoFileClip(&quot;影片檔路徑&quot;)
+audio = video.audio
+audio.write_audiofile(&quot;.mp3檔路徑&quot;)</pre>
 </div>
 <div created="20200225133509484" modified="20200225160149276" tags="Python Scrapy" title="在其他腳本中運行scrapy">
 <pre>https://docs.scrapy.org/en/latest/topics/practices.html
