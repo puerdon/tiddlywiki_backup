@@ -787,6 +787,8 @@ Error message and password prompt
 
 <li>VexFlow</li>
 
+<li>wav to mp3 using python</li>
+
 <li>Wordless</li>
 
 </ul>
@@ -10369,7 +10371,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200320104921946" list="t-test [[Inverted index]] GettingStarted" modified="20200320105530523" title="$:/StoryList">
+<div created="20200320104921946" list="[[wav to mp3 using python]] t-test [[Inverted index]] GettingStarted" modified="20200320105530523" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -16556,6 +16558,15 @@ Gumperz: contextualization cue
 <pre>呈現音樂樂譜的JS套件。
 
 https://github.com/0xfe/vexflow</pre>
+</div>
+<div created="20200320140610388" modified="20200320140715111" tags="python" title="wav to mp3 using python">
+<pre>使用套件`pydub` (https://github.com/jiaaro/pydub)
+
+```python
+import pydub
+sound = pydub.AudioSegment.from_wav(&quot;.wav路徑&quot;)
+sound.export(&quot;.mp3路徑&quot;, format=&quot;mp3&quot;)
+```</pre>
 </div>
 <div created="20200312082728113" modified="20200312082755886" tags="語料庫" title="Wordless">
 <pre>https://github.com/BLKSerene/Wordless
