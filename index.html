@@ -585,6 +585,8 @@ Error message and password prompt
 
 <li>cwb-encode.c</li>
 
+<li>Cython</li>
+
 <li>Discourse analysis</li>
 
 <li>Discourse Representation Theory</li>
@@ -10377,7 +10379,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200325073114874" list="[[尺度水準 level of measurement]] GettingStarted" modified="20200325073114874" title="$:/StoryList">
+<div list="Cython GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11200,7 +11202,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200325073119887" title="$:/temp/search">
+<div created="20200114023551220" modified="20200326091811984" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
@@ -14459,6 +14461,35 @@ fputs(&quot;333\n&quot;,stderr); fgets(scr,1,stdin);
 
 
 ```</pre>
+</div>
+<div created="20200326091812892" modified="20200326092108325" tags="Python" title="Cython">
+<pre>! .pxd文件
+
+.pxd 文件是由 Cython 编程语言 &quot;编写&quot; 而成的 Python 扩展模块头文件。
+
+.pxd 文件类似于 C 语言的 .h 头文件，.pxd 文件中有 Cython 模块要包含的 Cython 声明 (或代码段)。
+
+.pxd 文件可共享外部 C 语言声明，也能包含 C 编译器内联函数。.pxd 文件还可为 .pyx 文件模块提供 Cython 接口，以便其它 Cython 模块可使用比 Python 更高效的协议与之进行通信。
+
+可用 cimport 关键字将 .pxd 文件导入 .pyx 模块文件中。
+
+! .pyx文件
+
+.pyx 文件是由 Cython 编程语言 &quot;编写&quot; 而成的 Python 扩展模块源代码文件。
+
+.pyx 文件类似于 C 语言的 .c 源代码文件，.pyx 文件中有 Cython 模块的源代码。
+
+不像 Python 语言可直接解释使用的 .py 文件，.pyx 文件必须先被编译成 .c 文件，再编译成 .pyd (Windows 平台) 或 .so (Linux 平台) 文件，才可作为模块 import 导入使用。
+
+! .pyd文件
+
+.pyd 文件是非 Python，由其它编程语言 &quot;编写-编译&quot; 生成的 Python 扩展模块。
+
+Python 要导入 .pyd 文件，实际上是在 .pyd 文件中封装了一个 module。在 python 中使用时，把它当成 module 来用就可以了，即：&quot;import 路径名.modulename&quot; 即可，路径名为 .pyd 文件所在的路径。
+
+基于 Qt/C++ 的 PyQt、PySide GUI (图形用户界面) 开发框架绑定，会为每个 Qt/C++ 库 .dll 文件生成一个中间 .pyd 文件。PyWin32 项目分发包中，也存在很多 MicroSoft Windows OS 相应 .dll 文件的中间 .pyd 文件。
+
+Cython 可将个人基于 Python 语言编写的 Python 模块编译成具有 C 语言特性的 .pyd 文件。</pre>
 </div>
 <div created="20200110135255410" modified="20200111142638257" tags="" title="Discourse analysis">
 <pre>先於語言學的DA研究
