@@ -10367,8 +10367,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200211084127932" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200316061920368" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20200120091512741" modified="20200401063911014" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20200214024138060" modified="20200214024145125" title="$:/state/tab--1575919232">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
@@ -10418,7 +10418,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200331130519872" list="梵語變格變位網站 [[vim split]] GettingStarted" modified="20200331130519872" title="$:/StoryList">
+<div created="20200401063838169" list="[[buffer, window, tab in vim]] GettingStarted" modified="20200401063838169" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -12370,8 +12370,57 @@ _________|
 <div created="20200307141309693" modified="20200307141332655" title="Binary search tree">
 <pre>每個node都只能有1個key和2個children。</pre>
 </div>
-<div created="20200329140800537" modified="20200329140820869" tags="vim" title="buffer, window, tab in vim">
-<pre>https://sanctum.geek.nz/arabesque/buffers-windows-tabs/</pre>
+<div created="20200329140800537" modified="20200401071358351" tags="vim" title="buffer, window, tab in vim">
+<pre>! 官方文件: Vim documentation: Windows
+
+連結： http://vimdoc.sourceforge.net/htmldoc/windows.html#windows.txt
+
+!! tab &gt; window &gt; buffer
+
+&lt;&lt;&lt;
+* A buffer is the in-memory text of a file.
+* A window is a viewport on a buffer.
+* A tab page is a collection of windows.
+&lt;&lt;&lt;
+
+&lt;&lt;&lt;
+A window is a viewport onto a buffer.  You can use multiple windows on one
+buffer, or several windows on different buffers.
+
+''A buffer is a file loaded into memory for editing.  The original file remains
+unchanged until you write the buffer to the file.''
+
+A buffer can be in one of three states:
+
+
+							*active-buffer*
+active:   The buffer is displayed in a window.  If there is a file for this
+	  buffer, it has been read into the buffer.  The buffer may have been
+	  modified since then and thus be different from the file.
+
+							*hidden-buffer*
+hidden:   The buffer is not displayed.  If there is a file for this buffer, it
+	  has been read into the buffer.  Otherwise it's the same as an active
+	  buffer, you just can't see it.
+
+							*inactive-buffer*
+inactive: The buffer is not displayed and does not contain anything.  Options
+	  for the buffer are remembered if the file was once loaded.  It can
+	  contain marks from the |viminfo| file.  But the buffer doesn't
+	  contain text.
+&lt;&lt;&lt;
+
+! Buffer
+
+`:ls` 看目前所有的buffer
+
+`:new` 開啟一個新的 buffer
+
+`:e &lt;file&gt;` 將一個檔案讀進 buffer
+
+! 其他網站的說明
+* https://sanctum.geek.nz/arabesque/buffers-windows-tabs/
+* https://vim.fandom.com/wiki/Buffers</pre>
 </div>
 <div created="20200128122151891" modified="20200316063324111" tags="" title="C/C++學習資源">
 <pre>!C
