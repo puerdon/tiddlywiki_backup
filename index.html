@@ -10367,8 +10367,8 @@ Error message and password prompt
 <div created="20200110131601796" modified="20200211084127932" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200120091512741" modified="20200401063911014" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20200120091512741" modified="20200401073150152" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20200214024138060" modified="20200214024145125" title="$:/state/tab--1575919232">
 <pre>$:/core/ui/TiddlerInfo/Tools</pre>
@@ -12370,13 +12370,14 @@ _________|
 <div created="20200307141309693" modified="20200307141332655" title="Binary search tree">
 <pre>每個node都只能有1個key和2個children。</pre>
 </div>
-<div created="20200329140800537" modified="20200401071358351" tags="vim" title="buffer, window, tab in vim">
+<div created="20200329140800537" modified="20200401073144692" tags="vim" title="buffer, window, tab in vim">
 <pre>! 官方文件: Vim documentation: Windows
 
 連結： http://vimdoc.sourceforge.net/htmldoc/windows.html#windows.txt
 
 !! tab &gt; window &gt; buffer
 
+Buffer 负责保存数据，Window 负责展示数据，Tab 为 Window 提供排版布局
 &lt;&lt;&lt;
 * A buffer is the in-memory text of a file.
 * A window is a viewport on a buffer.
@@ -12412,11 +12413,15 @@ inactive: The buffer is not displayed and does not contain anything.  Options
 
 ! Buffer
 
-`:ls` 看目前所有的buffer
+`:ls` (等同於`:buffers`) 看目前所有的buffer
 
 `:new` 開啟一個新的 buffer
 
 `:e &lt;file&gt;` 將一個檔案讀進 buffer
+
+`:bn` (`:bnext`) go to next buffer in the buffer list
+
+`:bp` (`:bprevious`)
 
 ! 其他網站的說明
 * https://sanctum.geek.nz/arabesque/buffers-windows-tabs/
