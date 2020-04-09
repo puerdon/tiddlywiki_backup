@@ -16026,10 +16026,93 @@ https://en.wikipedia.org/wiki/Pulses_per_quarter_note</pre>
 
 bandpass filter</pre>
 </div>
-<div created="20200409080201695" modified="20200409144048608" tags="Python" title="pyenv vs. pipenv">
+<div created="20200409080201695" modified="20200409150343034" tags="Python" title="pyenv vs. pipenv">
 <pre>pyenv幫忙管理的是同一台電腦裡頭的不同python版本，並沒有包含虛擬環境（後來有出一個搭配pyenv一起使用的pyenv-virtualenv，加上他才能用來搭建虛擬環境）。
 
-而pipenv則是用來管理虛擬環境和pip套件環境的。</pre>
+而pipenv則是用來管理虛擬環境和pip套件環境的。
+
+
+! Simple Python Version Management: pyenv
+
+* Github: https://github.com/pyenv/pyenv
+* Command reference: https://github.com/pyenv/pyenv/blob/master/COMMANDS.md
+
+&lt;&lt;&lt;
+pyenv lets you easily switch between multiple versions of Python
+&lt;&lt;&lt;
+
+!! 列出所有可用指令
+
+```
+$ pyenv commands
+```
+
+!! 列出所有可安裝的python版本
+
+```
+$ pyenv install --list
+```
+
+!! 安裝某版本python
+
+```
+$ pyenv install &lt;版本號&gt;
+```
+
+例如：
+
+```
+$ pyenv install 3.7.7
+```
+
+會安裝在`$(pyenv root)/versions`這個路徑底下
+
+每次安裝成功後記得一定要跑`rehash`指令：
+
+```
+$ pyenv rehash
+```
+
+!! 查看目前電腦中由pyenv所掌控的所有python版本
+
+```
+$ pyenv versions
+```
+
+!! 查看目前正在使用的python版本
+
+```
+$ pyenv version
+```
+
+!! 指定一個global的python版本
+
+```
+$ pyenv global &lt;版本號&gt;
+```
+
+這個指令會把所指定的版本號寫進`~/.pyenv/version`當中。
+
+
+!! 為當前的terminal session指定python版本
+
+```
+$ pyenv shell &lt;版本號&gt;
+```
+這個指令會為這個shell session指定一個環境變數`PYENV_VERSION`
+
+!! 為當前目錄指定一個python版本
+
+```
+$ pyenv local &lt;版本號&gt;
+```
+
+這個指令做的是會在當前目錄新增一個檔案`.python-version`，裡面會紀錄你所指定的版本號，這個版本號會蓋過`pyenv global`所設定的。因此只要每次進到這個目錄使用python時，就會自動使用所指定的版本。
+
+!! `global`, `local`, `shell` 比較
+* `global`指定全局
+* `shell`只指定當前的session，開一個新的terminal，這個設定就會消失
+* `local`設定的版本只會作用於某特定的目錄，及目錄底下的地方。</pre>
 </div>
 <div created="20200218061004908" modified="20200218061047337" tags="audio Python" title="Python Audio Synthesis From Scratch: A Tutorial Series">
 <pre>https://sidparida.com/2017/07/10/python-audio-synthesis-from-scratch-a-tutorial-series-part-0-score-creator-demo-and-features/</pre>
