@@ -613,6 +613,8 @@ Error message and password prompt
 
 <li>Discourse structure/relations/parsing</li>
 
+<li>Elasticsearch</li>
+
 <li>Enharmonic</li>
 
 <li>Envelope: ADSR</li>
@@ -10432,7 +10434,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200415032426681" list="Lucene [[Apache Tika]] GettingStarted" modified="20200415032426681" title="$:/StoryList">
+<div list="Elasticsearch GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -11255,7 +11257,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200110030450011" modified="20200121022846101" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>math</pre>
 </div>
-<div created="20200114023551220" modified="20200412151312042" title="$:/temp/search">
+<div created="20200114023551220" modified="20200415171656018" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200121024044385" modified="20200121024044386" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
@@ -14677,6 +14679,53 @@ Discourse structure is a type of structure used to “refer to the structure of 
 ** discourse relations (a.k.a. coherence relations)
 * Martin, J. R. (2009). Discourse studies. in Halliday, M. A. K. and Webster, J. J. (eds.) Continuum companion to systemic functional linguistics.
 ** 回顧介紹SFL框架下的da研究 </pre>
+</div>
+<div created="20200415171656994" modified="20200416043907750" tags="Elasticsearch" title="Elasticsearch">
+<pre>! 下載 Elasticsearch
+
+! 執行 Elasticsearch
+
+```bash
+$ ./elasticsearch-7.6.2/bin/elasticsearch
+```
+
+就可以在 localhost:9200 進行API操作
+
+!! 使用curl
+
+```bash
+$ curl -X&lt;VERB&gt; '&lt;PROTOCOL&gt;://&lt;HOST&gt;:&lt;PORT&gt;/&lt;PATH&gt;?&lt;QUERY_STRING&gt;' -d '&lt;BODY&gt;'
+```
+
+! 建立index (=把document傳上去給elasticsearch)
+
+```
+PUT /&lt;index名稱&gt;/_doc/&lt;doc id&gt;
+```
+
+例如
+
+```
+PUT /customer/_doc/1
+{
+  &quot;name&quot;: &quot;John Doe&quot;
+}
+```
+
+!! 如果有大量文件，可以使用 Bulk API 上傳
+會比一個一個上傳還快
+
+&lt;&lt;&lt;
+The optimal batch size depends on a number of factors: the document size and complexity, the indexing and search load, and the resources available to your cluster. A good place to start is with batches of 1,000 to 5,000 documents and a total payload between 5MB and 15MB. From there, you can experiment to find the sweet spot.
+&lt;&lt;&lt;
+
+* [[Bulk API|https://www.elastic.co/guide/en/elasticsearch/reference/7.6/docs-bulk.html]]
+
+! 取得剛剛上傳的文件
+
+```
+GET /customer/_doc/1
+```</pre>
 </div>
 <div created="20200217073727546" modified="20200217073747703" tags="Music" title="Enharmonic">
 <pre>異名同音。</pre>
