@@ -813,6 +813,8 @@ Error message and password prompt
 
 <li>soft vs. hard link</li>
 
+<li>spectral leakage</li>
+
 <li>ssh (Secured Shell)</li>
 
 <li>static vs. final</li>
@@ -10462,7 +10464,7 @@ Error message and password prompt
 <div created="20200213080749832" modified="20200213080800267" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20200423050006314" list="介紹三角函數 [[Audio Signal Processing學習資源]] [[intro to fft in pure data]] GettingStarted" modified="20200423050006314" title="$:/StoryList">
+<div created="20200423050006314" list="[[spectral leakage]] 介紹三角函數 [[Audio Signal Processing學習資源]] [[intro to fft in pure data]] GettingStarted" modified="20200423050006314" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200121024212991" modified="20200121024212991" title="$:/temp/HidePluginWarning">
@@ -16560,6 +16562,17 @@ $ ln source.file softlink.file
 * https://www.ostechnix.com/explaining-soft-link-and-hard-link-in-linux-with-examples/
 * [[What is the difference between a hard link and a symbolic link?|https://askubuntu.com/questions/108771/what-is-the-difference-between-a-hard-link-and-a-symbolic-link]]
 * [[What is a real application of symbolic link?|https://www.quora.com/What-is-a-real-application-of-symbolic-link]]</pre>
+</div>
+<div created="20200423062138275" modified="20200423062421229" tags="audio [[digital audio processing]] windowing" title="spectral leakage">
+<pre>再做傅立葉轉換時，由於原訊號的斷裂，造成轉換後，無法分離出很漂亮的頻率。
+
+Windowing就是解決spectral leakage的一個辦法。
+
+https://www.youtube.com/watch?v=YsqGQzJ_2V0
+
+http://digitalsoundandmusic.com/2-3-11-windowing-functions-to-eliminate-spectral-leakage/
+
+https://download.ni.com/evaluation/pxi/Understanding%20FFTs%20and%20Windowing.pdf</pre>
 </div>
 <div created="20200221080902818" modified="20200221081614479" tags="[[ssh (Secured Shell)]]" title="ssh (Secured Shell)">
 <pre>早期透過`telnet`去連上另外一台電腦，但這樣不安全。
