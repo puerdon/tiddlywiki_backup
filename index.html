@@ -11084,10 +11084,20 @@ def default_to_regular(d):
     return d
 ```</pre>
 </div>
-<div created="20200829043556633" modified="20200829044046017" tags="Reason" title="從外部用midi控制reason (Remote)">
+<div created="20200829043556633" modified="20200829045358223" tags="Reason" title="從外部用midi控制reason (Remote)">
 <pre>* This is Remote: https://help.reasonstudios.com/hc/en-us/articles/360002215114-This-is-Remote
 * Hacking Remote files in Reason: https://www.soundonsound.com/techniques/hacking-remote-files-reason
-* 可以參考Nektar Panorama系列的midi鍵盤的說明書（這系列對Reason有很完整的支援，因此從說明書可以知道那些功能的英文叫做什麼：http://support.nektartech.com/Downloads/Panorama_Guides/Using_Panorama_with_Reason_User_Guide.pdf）</pre>
+* 可以參考Nektar Panorama系列的midi鍵盤的說明書（這系列對Reason有很完整的支援，因此從說明書可以知道那些功能的英文叫做什麼：http://support.nektartech.com/Downloads/Panorama_Guides/Using_Panorama_with_Reason_User_Guide.pdf）
+
+! 需要的兩種檔案類型
+
+!! MIDI codec file (`.midicodec`)
+
+tells Reason what physical controls are on the controller. It may also contain a data dump that Reason can send to the device to configure it.
+
+!! 
+
+The second is called a Remote Map file and lists all the assignments of each control for every Reason device, including multiple bank assignments.</pre>
 </div>
 <div created="20200211072645223" modified="20200211074417447" tags="Computer Linux" title="掛載 (mount)">
 <pre>&lt;&lt;&lt;
